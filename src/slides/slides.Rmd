@@ -1,0 +1,23 @@
+---
+title: "Untitled"
+author: '@salvafern'
+date: "4/13/2022"
+output: revealjs::revealjs_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Bringing together marine biodiversity, environmental and maritime boundaries data in R 
+
+This will be the slides for the workshop
+
+## Challenge one
+
+Do stuff
+
+
+```{r render, include = FALSE, eval = FALSE}
+rmarkdown::render("slides.Rmd", output_dir = "../../docs", output_file = "index.html")
+```
