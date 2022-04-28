@@ -1,22 +1,74 @@
 ---
-title: "Untitled"
-author: '@salvafern'
-date: "4/13/2022"
-output: revealjs::revealjs_presentation
+title: ""
+author: ''
+date: ""
+output: 
+  revealjs::revealjs_presentation:
+    theme: sky
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-## Bringing together marine biodiversity, environmental and maritime boundaries data in R 
 
-This will be the slides for the workshop
+<img class="plain" data-src="images/image2.png"> 
 
-## Challenge one
+##  Bringing together marine biodiversity, environmental and maritime boundaries data in R
+Salvador Fernandez 
 
-Do stuff
+May 30th 2022
 
+<img class="plain" data-src="images/logo2.png" width="200" height="180"> 
+<img class="plain" data-src="images/header_lw_logo.png"> 
+
+## Proper collection allow humans and machines to find the data 
+
+![](images/sources.jpg){width=60%}
+
+## Reusing data leads to discovery, innovation & scientific integration
+
+![](images/reusedata.jpg)
+
+## FAIR principles
+
+![](images/fair-data.png)
+
+## We will learn
+
+ 1. How to access, query and obtain the data 
+ 
+ 2. Visualize and get them ready for further exploration and analyses   
+ 
+ 3. To use R packages: lwdataexplorer, eurobis, worrms, mregions, sdmpredictors
+
+## Exercises of today
+
+
+  1. Access marine regions data
+
+  2. Get data from marine species from LifeWatch
+
+  3. Get data from species in EurOBIS
+
+  4. Access seabed habitat and human activities from EMODnetWFS  
+  
+  
+## 1. Access marine regions data
+
+mregions is an R package that contains a standard, relational list of geographic names, coupled with information and maps of the geographic location of these features.
+
+## 2. Get data from marine species from LifeWatch
+
+lwdataexplorer retrieves biodiversity, environmental or genetic data from the projects supported by LifeWatch Belgium, a virtual laboratory for biodiversity research
+
+## 3. Get data from species in EurOBIS
+
+EurOBIS is the package to get biogeographic data on marine species collected by European institutions and make it freely available and easily accessible.
+
+## 4. Access seabed habitat and human activities from EMODnetWFS  
+
+An R to query information on and download data from all available EMODnet Web Feature Service (WFS) endpoints (bathymetry, biology, chemistry, geology, human activities, physics, and seabed habitats) directly into their R working environment
 
 ```{r render, include = FALSE, eval = FALSE}
 rmarkdown::render("slides.Rmd", output_dir = "../../docs", output_file = "index.html")
