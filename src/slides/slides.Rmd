@@ -16,6 +16,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ##  Bringing together marine biodiversity, environmental and maritime boundaries data in R
 Salvador Fernandez 
+Laura Marquez
 
 May 30th 2022
 
