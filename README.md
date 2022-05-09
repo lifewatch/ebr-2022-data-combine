@@ -46,3 +46,7 @@ ebr-2022-data-combine/
 * *data*: directory to save data and read local files from
 * *docs*: contains the slides and the infrastructure to deploy them online
 * *src*: scripts with the exercises that will be used during the workshop
+
+## Acknowledgments
+
+This workshop is inspired on the INBO Coding Club sessions. You can find more info here: https://inbo.github.io/coding-club/
