@@ -3,7 +3,7 @@
 
 [![Funding](https://img.shields.io/static/v1?label=powered+by&message=lifewatch.be&labelColor=1a4e8a&color=f15922)](http://lifewatch.be)
 
-Exercises and slides to be used during the workshop. More information in [this link](https://www.biodiversity.be/5147/).
+Exercises and slides to be used during the Workshop *Bringing together marine biodiversity, environmental and maritime boudnaries data in R* in the framework of the Empowering Biodiversity Research Conference II (EBRII). You can find practical information about the workshop and the EBRII conference on [this link](https://www.biodiversity.be/5147/).
 
 ## Initial set-up
 
