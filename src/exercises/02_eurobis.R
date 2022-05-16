@@ -10,7 +10,7 @@ library(dplyr)
 #
 # Hint: more info with ?eurobis_occurrences_basic()
 #---------------------------------------------------------------------------------------------
-mrgid = 2350
+mrgid = 3293
 list_aphia = unique(etn$valid_AphiaID)
 
 basic <- eurobis_occurrences_basic(
@@ -46,11 +46,13 @@ basic <- eurobis_occurrences_basic(
 #---------------------------------------------------------------------------------------------
 # Exercise 2.3.:
 #   - Wrangle the ETN dataset to fit the column names of eurobis.
+#   - Get only unique combinations of values
 #   - Bind the rows of both datasets
-#   - Calculate the number of new occurrences retrieved from eurobis compared to lwdataexplorer
 #
-# Hint: we recommend to use `dplyr::transmute()` and `dplyr::bind_rows()`
-# Hint: EurOBIS follows the Darwin Core standardized names: https://dwc.tdwg.org/terms/
+# Hint: the aphiaID from EurOBIS comes with a full URL. Use `gsub()` or `stringr::str_replace()` 
+#       together with `as.numeric()` to get only the AphiaID 
+# Hint: we recommend to use `dplyr::transmute()`, `unique.data.frame()` and `dplyr::bind_rows()`
+# Hint: EurOBIS follows the Darwin Core standard for naming the columns: https://dwc.tdwg.org/terms/
 #---------------------------------------------------------------------------------------------
 colnames(etn)
 colnames(basic)
@@ -68,6 +70,10 @@ df <- etn %>%
     scientificname = scientific_name, 
     aphiaid = AphiaID,
     scientificnameaccepted = valid_name
+  ) %>% arrange(
+    scientificname, datecollected
+  ) %>%
+  unique.data.frame(
   ) %>% 
   bind_rows(basic)
 
@@ -98,19 +104,12 @@ full_emof %>%
   distinct() %>% 
   View()
 
+
 # Query only Counts
-full_emof2 <- full_emof %>%
+full_emof <- full_emof %>%
   filter(parameter_measurementtypeid == "http://vocab.nerc.ac.uk/collection/P01/current/OCOUNT01/")
 
-#---------------------------------------------------------------------------------------------
-# Bonus exercise 2.5.: 
-#  - Get the CPR Survey dataset. It has more than 2M occurrences: it will take some time!
-# 
-# Hint: Metadata page in https://www.emodnet-biology.eu/data-catalog?module=dataset&dasid=216
-# Hint: Large queries are better done using pagination. Check ?eurobis_occurrences()
-#---------------------------------------------------------------------------------------------
-cpr <- eurobis_occurrences_basic(
-  dasid = 216,
-  paging = TRUE,
-  paging_length = 5000
-)
+
+
+
+

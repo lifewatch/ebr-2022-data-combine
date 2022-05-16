@@ -26,10 +26,10 @@ seabed_client <- emodnet_init_wfs_client("seabed_habitats_general_datasets_and_p
 seabed_info <- emodnet_get_wfs_info(seabed_client)
 View(seabed_info)
 
-# Get layer sandbanks and reef
+# Get layer reefs
 seabed_layers <- emodnet_get_layers(
   wfs = seabed_client, 
-  layers = c("art17_hab_1110", "art17_hab_1170"),
+  layers = "art17_hab_1170",
   reduce_layers = TRUE,
   crs = 4326
 ) %>% 
@@ -37,7 +37,7 @@ seabed_layers <- emodnet_get_layers(
   st_collection_extract(type = "POLYGON")
 
 # Inspect
-mapview(seabed_layers, zcol = "habitat_description", burst = TRUE)
+mapview(list(df, seabed_layers))
 
 
 #---------------------------------------------------------------------------------------------
@@ -46,7 +46,9 @@ mapview(seabed_layers, zcol = "habitat_description", burst = TRUE)
 #    the sdmpredictors R package.
 #  - Get the same data for future conditions under RCP85, for both 2050 and 2100.
 #
-# Hint: List all layers with `list_layers("Bio-ORACLE)` and list_layers_future("Bio-ORACLE")
+# Hint: List all layers with `list_layers("Bio-ORACLE)` and list_layers_future("Bio-ORACLE"). Look
+#       only at the latest version (2.2)
+# Hint: layers are loaded by providing the layer code
 #---------------------------------------------------------------------------------------------
 
 # See all present layers available
@@ -69,3 +71,7 @@ layers <- load_layers(layer_codes, rasterstack = TRUE, datadir = "./data/")
 
 # Inspect
 mapview(layers)
+
+# Inspect
+mapview(list(df, layers$BO22_tempmean_ss))
+

@@ -4,7 +4,6 @@ library(worrms)
 library(mregions2)
 
 ## Helper libraries
-library(dplyr)
 library(mapview)
 library(sf)
 
@@ -15,23 +14,15 @@ library(sf)
 # - Remove white spaces in the species names
 #
 # Hint: use `?getEtnData()` to find more information
-# Hint: you may need `trimws()`
 #---------------------------------------------------------------------------------------------
 etn <- getEtnData(
   startdate = "2015-01-01",
   stopdate = "2016-01-01",
   action = "Time bins",
-  by = "1 week",
+  by = "1 day",
   networks = "All",
   projects = "All"
 )
-
-# With dplyr
-etn <- etn %>% 
-  mutate(scientific_name = trimws(scientific_name)) 
-
-# With R base
-etn$scientific_name <- trimws(etn$scientific_name)
 
 # Inspect
 View(etn)
@@ -48,10 +39,7 @@ View(etn)
 # Hint: use `do.call(rbind, my_data_frame)` to turn a list into a data frame
 #---------------------------------------------------------------------------------------------
 
-# dplyr
-species_list <- etn %>% distinct(scientific_name)
-
-# base
+# Unique list of species
 species_list <- unique(etn$scientific_name)
 
 # Taxon match
@@ -59,7 +47,7 @@ species_matched <- wm_records_taxamatch(species_list)
 species_matched <- do.call(rbind, species_matched)
 
 # Left join
-etn <- left_join(etn, species_matched, by = c("scientific_name" = "scientificname"))
+etn <- merge(etn, species_matched, by.x = "scientific_name", by.y = "scientificname")
 
 # Inspect
 View(etn)
@@ -67,75 +55,40 @@ View(etn)
 
 #---------------------------------------------------------------------------------------------
 # Exercise 1.3.: 
-# - Use the mregions2 package to find and get the record for the North Sea.
+# - Use the mregions2 package to find and get the record for the Belgian Part of the North Sea.
 # - Do a geospatial intersection between the latitude and longitude fields in the ETN 
-# data and the North Sea from Marine Regions. 
+#   data and the North Sea from Marine Regions. 
 #
-# TODO ADD TO SLIDES
-# To do spatial calculations, you must transform the ETN data from a data.frame to the 
-# class `sf`. Do it with sf::st_as_sf() with the arguments `coords` and `crs`. 
-#
-# In `coords`, you can pass the columns of your dataset containing the longitude and latitude 
-# as `coords = c("column_with_longitude", "column_with_latitude")`
-# set `remove = FALSE` to keep the longitude and latitude columns
-#
-# In `crs` you provide the Coordinate Reference System. We assume this is 4326. 
-# More info in: https://inbo.github.io/coding-club/sessions/20190226_gis_vector.html
-# END TODO
-#
+# Hint: you must transform the ETN data from a data.frame to a simple feature `sf` class. 
+#       Use the function `st_as_sf()` with the `coords` and `crs` arguments
 # Hint: all functions from the sf package start as `sf_*()`
 # For example: `st_intersection()`
 #---------------------------------------------------------------------------------------------
 
 # Find the North Sea
-mr_gaz_records_by_names("North Sea", FALSE)
-north_sea <- mr_gaz_record(2350)
+mr_belgian <- mr_gaz_records_by_names("Belgian")
+View(mr_belgian)
+
+bpns <- mr_gaz_record(3293)
 
 # Transform data frame into simple feature object
-etn <- etn %>%
-  st_as_sf(coords = c("longitude", "latitude"), crs = 4326, remove = FALSE)
+etn <- st_as_sf(etn, coords = c("longitude", "latitude"), crs = 4326, remove = FALSE)
 
 # Inspect both
-mapview(list(etn, north_sea))
-
-# Get unique list of longitude and latitude combinations
-
+mapview(list(etn, bpns))
 
 # Perform the intersection
-system.time(
-  etn <- st_intersection(etn, north_sea)
-)
-# user  system elapsed 
-# 517.85   15.19  533.74 
+etn <- st_intersection(etn, bpns)
+
 # Inspect again
-mapview(list(etn, north_sea))
+mapview(list(etn, bpns))
 
 
 #---------------------------------------------------------------------------------------------
-# Exercise 1.4.: 
-# - Wrangle data to have only a subset of columns:
-#   - Species name
-#   - Aphia ID
-#   - Valid Aphia ID
-#   - Time
-#   - Longitude and Latitude
-# - Save results to `./data`
-# 
-# Hint: We recommend to use`dplyr::select()`
+# Bonus Exercise 1.4.: 
+# - Save the ETN data into disk
+#
 #---------------------------------------------------------------------------------------------
-
-# See all the columns
-colnames(etn)
-
-# Subset a few
-etn <- etn %>% select(
-  scientific_name, AphiaID, valid_AphiaID, valid_name,
-  time, 
-  longitude, latitude, MRGID
-)
-
-# Inspect
-View(etn)
 
 # To turn into a data.frame again
 st_drop_geometry(etn)
