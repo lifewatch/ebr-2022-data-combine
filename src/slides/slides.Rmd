@@ -231,6 +231,12 @@ Anguila, carp, catfish, the common roach, codfish and flounder.
   <br>Marine Regions Geographic IDentifier (MRGID)<br />Unique identifier of an entry in the [marineregions.org](https://marineregions.org/mrgid.php) database
 </button>
 
+## Exercise 1
+
+```{r exercise1, results='asis', echo=FALSE}
+cat(c("```r", readLines("../exercises/01_standarize.R"),"```"), sep = "\n")
+```
+
 <!-- ## Notes: -->
 
 <!--   - LifeWatch Belgium: a virtual laboratory for biodiversity research -->
@@ -249,6 +255,7 @@ Anguila, carp, catfish, the common roach, codfish and flounder.
 <img src="images/ex2.png" style="width:85%">
 
 ## Raster vs Vector Data
+<br>
 <br>
 <br>
 
@@ -271,6 +278,12 @@ Anguila, carp, catfish, the common roach, codfish and flounder.
 
 <img src="images/dplyr.png" style="width:70%"> 
 
+## Exercise 2
+
+
+```{r exercise2, results='asis', echo=FALSE}
+cat(c("```r", readLines("../exercises/02_eurobis.R"),"```"), sep = "\n")
+```
 
 <!-- ## Notes -->
 
@@ -281,6 +294,7 @@ Anguila, carp, catfish, the common roach, codfish and flounder.
 <!--   - Data can be accessed via the AphiaID for a specific taxon or the MRGID for a specific place -->
 <!-- The EurOBIS database uses Marine Regions and WoRMS as geographical and taxonomic backbones. -->
 <!-- This means that you can ask for data of an specific taxon via the AphiaID, and data from an specific place with the Marine Regions Gazetteer Identifier or MRGID. -->
+
 # Exercise 3
 
 <img src="images/ex3.png" style="width:85%">
@@ -315,9 +329,22 @@ Anguila, carp, catfish, the common roach, codfish and flounder.
 
 **Attention:** `raster::extract()` and `sf::st_join` both do a spatial join. The former is used for raster data, the second one for vector data!
 
+## Exercise 3
+
+```{r exercise3, results='asis', echo=FALSE}
+cat(c("```r", readLines("../exercises/03_environmental.R"),"```"), sep = "\n")
+```
+
+
 # Exercise 4
 
 <img src="images/ex4.png" style="width:85%">
+
+## Exercise 4
+
+```{r exercise4, results='asis', echo=FALSE}
+cat(c("```r", readLines("../exercises/04_combine.R"),"```"), sep = "\n")
+```
 
 # Questions? Contact us!
 
