@@ -189,24 +189,26 @@ Anguila, carp, catfish, the common roach, codfish and flounder.
 
 # Exercise 1
 
-<img src="images/ex1.png" style="width:85%">
+<img src="images/ex1.png" style="width:75%">
 
 **Use your own data!**
 
 ## Geospatial Data and Operations
 
-<br/>
-<br/>
+<img src="images/spatial_ops.png" style="width:75%">
 
-<button style="width:45%">
-  <img src="images/intersect.png">
-  <br> **spatial intersection**
-</button>
+<!-- <br/> -->
+<!-- <br/> -->
 
-<button style="width:45%">
-  <img src="images/union.png">
-  <br> **spatial union**
-</button>
+<!-- <button style="width:45%"> -->
+<!--   <img src="images/intersect.png"> -->
+<!--   <br> **spatial intersection** -->
+<!-- </button> -->
+
+<!-- <button style="width:45%"> -->
+<!--   <img src="images/union.png"> -->
+<!--   <br> **spatial union** -->
+<!-- </button> -->
 
 <br/>
 
@@ -223,12 +225,12 @@ Anguila, carp, catfish, the common roach, codfish and flounder.
 
 <button style="width:40%">
   <img src="images/turtle.jpg">
-  <br> AphiaID<br>Unique identifier of a taxon<br/> https://www.marinespecies.org/aphia.php?p=image&pic=116025&tid=137205 
+  <br> **AphiaID**<br>Unique identifier of a taxon<br/> https://www.marinespecies.org/aphia.php?p=image&pic=116025&tid=137205 
 </button>
 
 <button style="width:40%">
   <img src="images/mrgid.png">
-  <br>Marine Regions Geographic IDentifier (MRGID)<br />Unique identifier of an entry in the [marineregions.org](https://marineregions.org/mrgid.php) database
+  <br>Marine Regions Geographic IDentifier (**MRGID**)<br />Unique identifier of an entry in the [marineregions.org](https://marineregions.org/mrgid.php) database
 </button>
 
 ## Exercise 1
@@ -253,22 +255,6 @@ cat(c("```r", readLines("../exercises/01_standarize.R"),"```"), sep = "\n")
 # Exercise 2
 
 <img src="images/ex2.png" style="width:85%">
-
-## Raster vs Vector Data
-<br>
-<br>
-<br>
-
-<button style="width:40%">
-  <img src="images/raster.png">
-  <br> **raster layer**
-</button>
-
-<button style="width:40%">
-  <img src="images/vector.png">
-  <br> **vector layer**
-</button>
-
 
 ## Dplyr
 
@@ -310,24 +296,20 @@ cat(c("```r", readLines("../exercises/02_eurobis.R"),"```"), sep = "\n")
 <!--  - WFS: Web Feature Service (provides access to vector data) -->
 <!--  - Accessing raster data: available later in 2022 -->
 
-## Attention
+## Raster vs Vector Data
+<br>
+<br>
+<br>
 
-<br/>
-<br/>
-
-<button style="width:45%">
-  <img src="images/intersect.png">
-  <br> **spatial intersection**
+<button style="width:40%">
+  <img src="images/raster.png">
+  <br> **raster layer**
 </button>
 
-<button style="width:45%">
-  <img src="images/union.png">
-  <br> **spatial union**
+<button style="width:40%">
+  <img src="images/vector.png">
+  <br> **vector layer**
 </button>
-
-<br/>
-
-**Attention:** `raster::extract()` and `sf::st_join` both do a spatial join. The former is used for raster data, the second one for vector data!
 
 ## Exercise 3
 
@@ -339,6 +321,28 @@ cat(c("```r", readLines("../exercises/03_environmental.R"),"```"), sep = "\n")
 # Exercise 4
 
 <img src="images/ex4.png" style="width:85%">
+
+## Attention
+
+<img src="images/spatial_ops.png" style="width:75%">
+
+<!-- <br/> -->
+<!-- <br/> -->
+
+<!-- <button style="width:45%"> -->
+<!--   <img src="images/intersect.png"> -->
+<!--   <br> **spatial intersection** -->
+<!-- </button> -->
+
+<!-- <button style="width:45%"> -->
+<!--   <img src="images/union.png"> -->
+<!--   <br> **spatial union** -->
+<!-- </button> -->
+
+<br/>
+
+**Attention:** `raster::extract()` and `sf::st_join` both do a spatial join. The former is used for raster data, the second one for vector data!
+
 
 ## Exercise 4
 
