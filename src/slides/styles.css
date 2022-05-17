@@ -13,9 +13,11 @@
 
 /* code window settings */
 .reveal section pre code {
-    font-size: 15px;
-    heigt: 500px;
-    /*
+    font-size: 17px;
+        /*
+    height: 1080px;
+    width: 100px;
+
     width: 1536px;
     height: 864px;
     width: 1920px;

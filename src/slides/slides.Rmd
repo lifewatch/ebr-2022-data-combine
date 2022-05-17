@@ -44,8 +44,37 @@ May 30th 2022
 <!-- library(worrms) -->
 <!-- ``` -->
 
+# The Story
 
-=======
+<!-- Having rapid access to reliable and accurate information is vital in different areas: conservation, research, and in creating policies and legislation to protect vulnerable areas of our coasts and oceans. 
+
+(1) However, we have several sources of information where we can obtain a diverse set of data from and different ways to obtain it. 
+
+so the question is what is the workflow that allows us to obtain data and work with it in the most easy straightforward way possible? -->
+
+<img src="images2/pic1_.jpg" style="width:85%">
+
+
+## The Story
+
+<!-- There is a diverse set of stakeholders, from academia, industry, funding agencies and scholarly publishers can benefit from having a workflow to access standardized marine biological, chemical, physical, and other different types of data. -->
+
+<img src="images2/pic2.png" style="width:85%">
+
+## The Story
+<!-- An important user of the databases that we are going to work with today is the scientific community. For scientists, obtaining this kind of information is useful to create the basis of different projects or even to obtain data they need to carry them out. Some of the questions that arise for them when creating such projects are -->
+
+<img src="images2/pic3.jpg" style="width:85%">
+
+## The Story
+<img src="images2/pic4.jpg" style="width:85%">
+
+## The Story
+<img src="images2/pic5.jpg" style="width:85%">
+
+## The Story
+<img src="images2/pic6.jpg" style="width:85%">
+
 
 ## Who we are
 
@@ -64,86 +93,33 @@ May 30th 2022
   <br> **Lotte Pohl** <br /> VLIZ/IMBRSea <br/>Intern<br /> lotte.pohl@imbrsea.eu 
 </button>
 
-<!-- <img data-src="images/Salva.jpg" style="float:left;width:20%"/> -->
-<!-- <img src="images/Laura.png" style="float:center;width:20%"/> -->
-<!-- <img src="images/Lotte.jpg" style="float:right;width:20%"/> -->
-<!-- <br /> -->
-<!-- <small style="float:left;">**Salva Fernandez** <br/> VLIZ <br/>Science Officer<br/> salvador.fernandez@vliz.be </small> -->
-<!-- <small style="float:center;">**Laura Marquez** <br /> VLIZ <br/>Science Officer<br/> laura.marquez@vliz.be</small> -->
-<!-- <small style="float:right;">**Lotte Pohl** <br /> VLIZ/IMBRSea <br/>Intern<br /> lotte.pohl@imbrsea.eu </small> -->
-
-=======
-# 
-
-<!-- Having rapid access to reliable and accurate information is vital in different areas: conservation, research, and in creating policies and legislation to protect vulnerable areas of our coasts and oceans. 
-
-(1) However, we have several sources of information where we can obtain a diverse set of data from and different ways to obtain it. 
-
-so the question is what is the workflow that allows us to obtain data and work with it in the most easy straightforward way possible? -->
-
-<img class="plain" data-src="images2/pic1_.jpg">
-
-
-## 
-=======
-
-<!-- There is a diverse set of stakeholders, from academia, industry, funding agencies and scholarly publishers can benefit from having a workflow to access standardized marine biological, chemical, physical, and other different types of data. -->
-
-<img class="plain" data-src="images2/pic2.png" style="width:75%">
-
-
-## 
-
-<!-- An important user of the databases that we are going to work with today is the scientific community. For scientists, obtaining this kind of information is useful to create the basis of different projects or even to obtain data they need to carry them out. Some of the questions that arise for them when creating such projects are -->
-
-##
-
-<img class="plain" data-src="images2/pic3.jpg">
-
-##
-
-<img class="plain" data-src="images2/pic4.jpg">
-
-##
-
-<img class="plain" data-src="images2/pic5.jpg">
-
-##
-
-<img class="plain" data-src="images2/pic6.jpg">
-
-
-## We will learn
-
- 1. How to access, query and obtain the data
-
- 2. Visualize and get them ready for further exploration and analyses using R
-     
-
-## 
+## The Species
 <!-- To answer those type of questions is the aim of this workshop. We are going to learn how to query, access and obtain the data hold in different European Marine databases and for that we are going to work with some of the representative species: 
 Anguila, carp, catfish, the common roach, codfish and flounder.
 -->
+<!-- <button style="width:100%"> -->
+<!--   <img src="images2/Anguilla.jpg"> -->
+<!-- </button> -->
 
-<img class="plain" data-src="images2/Anguilla.jpg">
+<img src="images2/Anguilla.jpg" style="width:75%">
 
-##
-<img class="plain" data-src="images2/carp.jpg">
+## The Species
+<img src="images2/carp.jpg" style="width:75%">
 
-##
-<img class="plain" data-src="images2/catfish.jpg">
+## The Species
+<img src="images2/catfish.jpg" style="width:75%">
 
-##
-<img class="plain" data-src="images2/commonroach.jpg">
+## The Species
+<img src="images2/commonroach.jpg" style="width:75%">
 
-##
-<img class="plain" data-src="images2/cod.jpg">
+## The Species
+<img src="images2/cod.jpg" style="width:75%">
 
-##
-<img class="plain" data-src="images2/flounder.jpg">
+## The Species
+<img src="images2/flounder.jpg" style="width:75%">
 
 
-## We will learn
+## What we will learn
 
 <!-- We will learn to visualize and get them ready for further exploration and analyses. All using the R packages available from different European initiatives: lwdataexplorer, eurobis, worrms, mregions, sdmpredictors.
 -->
@@ -151,8 +127,10 @@ Anguila, carp, catfish, the common roach, codfish and flounder.
  1. How to access, query and obtain the data
 
  2. Visualize and get them ready for further exploration and analyses using R
-     
-=======
+
+<!-- <br> -->
+<!-- <br> -->
+
  3. R packages: 
      - **lwdataexplorer** ([documentation](https://lifewatch.github.io/lwdataexplorer/index.html), [github](https://github.com/lifewatch/lwdataexplorer))
      - **eurobis** ([documentation](http://lifewatch.github.io/eurobis/), [github](https://github.com/lifewatch/eurobis))
@@ -161,7 +139,7 @@ Anguila, carp, catfish, the common roach, codfish and flounder.
      - **sdmpredictors** ([documentation](http://lifewatch.github.io/sdmpredictors/), [github](https://github.com/lifewatch/sdmpredictors))
      - **emodnetWFS** ([documentation](https://emodnet.github.io/EMODnetWFS/), [github](https://github.com/EMODnet/EMODnetWFS/))
 
-## Overview
+## Data Sources Overview
 
 <img class="plain" data-src="images/Rpackages_overview.png" style="width:85%">
 
@@ -217,35 +195,47 @@ Anguila, carp, catfish, the common roach, codfish and flounder.
 
 ## Geospatial Data and Operations
 
-<button style="width:40%">
+<br/>
+<br/>
+
+<button style="width:45%">
   <img src="images/intersect.png">
   <br> **spatial intersection**
 </button>
 
-<button style="width:40%">
+<button style="width:45%">
   <img src="images/union.png">
   <br> **spatial union**
 </button>
 
 <br/>
-<br/>
 
-[Coordinate Reference System (CRS)](https://docs.qgis.org/2.18/en/docs/gentle_gis_introduction/coordinate_reference_systems.html):
-<br/>
-<img src="images/crs.jpg" style="width:35%">
+>[Coordinate Reference Systems (CRS)](https://docs.qgis.org/2.18/en/docs/gentle_gis_introduction/coordinate_reference_systems.html) provide a standardized way of describing locations.
+<br> 
+<small>https://www.nceas.ucsb.edu</small>
+<!-- <img src="images/crs.jpg" style="width:35%"> -->
 
 
 ## AphiaID and MRGID
 
+<br/>
+<br/>
+
 <button style="width:40%">
   <img src="images/turtle.jpg">
-  <br> AphiaID <br/> https://www.marinespecies.org/aphia.php?p=image&pic=116025&tid=137205 
+  <br> AphiaID<br>Unique identifier of a taxon<br/> https://www.marinespecies.org/aphia.php?p=image&pic=116025&tid=137205 
 </button>
 
 <button style="width:40%">
   <img src="images/mrgid.png">
-  <br> MRGID <br /> text
+  <br>Marine Regions Geographic IDentifier (MRGID)<br />Unique identifier of an entry in the [marineregions.org](https://marineregions.org/mrgid.php) database
 </button>
+
+## Exercise 1
+
+```{r exercise1, results='asis', echo=FALSE}
+cat(c("```r", readLines("../exercises/01_standarize.R"),"```"), sep = "\n")
+```
 
 <!-- ## Notes: -->
 
@@ -265,6 +255,7 @@ Anguila, carp, catfish, the common roach, codfish and flounder.
 <img src="images/ex2.png" style="width:85%">
 
 ## Raster vs Vector Data
+<br>
 <br>
 <br>
 
@@ -287,6 +278,12 @@ Anguila, carp, catfish, the common roach, codfish and flounder.
 
 <img src="images/dplyr.png" style="width:70%"> 
 
+## Exercise 2
+
+
+```{r exercise2, results='asis', echo=FALSE}
+cat(c("```r", readLines("../exercises/02_eurobis.R"),"```"), sep = "\n")
+```
 
 <!-- ## Notes -->
 
@@ -297,6 +294,7 @@ Anguila, carp, catfish, the common roach, codfish and flounder.
 <!--   - Data can be accessed via the AphiaID for a specific taxon or the MRGID for a specific place -->
 <!-- The EurOBIS database uses Marine Regions and WoRMS as geographical and taxonomic backbones. -->
 <!-- This means that you can ask for data of an specific taxon via the AphiaID, and data from an specific place with the Marine Regions Gazetteer Identifier or MRGID. -->
+
 # Exercise 3
 
 <img src="images/ex3.png" style="width:85%">
@@ -314,27 +312,59 @@ Anguila, carp, catfish, the common roach, codfish and flounder.
 
 ## Attention
 
-<button style="width:40%">
+<br/>
+<br/>
+
+<button style="width:45%">
   <img src="images/intersect.png">
   <br> **spatial intersection**
 </button>
 
-<button style="width:40%">
+<button style="width:45%">
   <img src="images/union.png">
-  <br> **spatial intersection**
+  <br> **spatial union**
 </button>
 
-<br>
-<br>
+<br/>
 
 **Attention:** `raster::extract()` and `sf::st_join` both do a spatial join. The former is used for raster data, the second one for vector data!
+
+## Exercise 3
+
+```{r exercise3, results='asis', echo=FALSE}
+cat(c("```r", readLines("../exercises/03_environmental.R"),"```"), sep = "\n")
+```
+
 
 # Exercise 4
 
 <img src="images/ex4.png" style="width:85%">
 
-# Have fun!
+## Exercise 4
 
+```{r exercise4, results='asis', echo=FALSE}
+cat(c("```r", readLines("../exercises/04_combine.R"),"```"), sep = "\n")
+```
+
+# Questions? Contact us!
+
+<button style="width:26%">
+  <img src="images/Salva.jpg">
+  <br> **Salva Fernandez** <br/> VLIZ <br/>Science Officer<br/> salvador.fernandez@vliz.be
+</button>
+
+<button style="width:43%">
+  <img src="images/Laura.png">
+  <br> **Laura Marquez** <br /> VLIZ <br/>Science Officer<br/> laura.marquez@vliz.be
+</button>
+
+<button style="width:25%">
+  <img src="images/Lotte.jpg">
+  <br> **Lotte Pohl** <br /> VLIZ/IMBRSea <br/>Intern<br /> lotte.pohl@imbrsea.eu 
+</button>
+
+<br><br>
+**And now have fun with the workshop!**
 
 ```{r render, include = FALSE, eval = FALSE}
 rmarkdown::render("slides.Rmd", output_dir = "../../docs", output_file = "index.html")
