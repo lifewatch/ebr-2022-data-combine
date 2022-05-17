@@ -1,272 +1,359 @@
 ---
-title: ""
-author: ''
-date: ""
+title: "Bringing together marine biodiversity, environmental and maritime boundaries data in R"
+author: "Salvador Fernandez, Laura Marquez"
+date: "May 30 2022"
 output: 
   revealjs::revealjs_presentation:
-    theme: sky
+    css: styles.css
+    theme: simple
+    slide_level: 2
+    transition: none
+    # includes:
+    #   in_header: header.html
+    # self_contained: false
+    # reveal_plugins: ["notes"]
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(collapse = TRUE)
 ```
 
+<img src="images/image2.png" style="width:50%">
 
-<img class="plain" data-src="images/image2.png"> 
+<div style="font-size: 30px;" >
+Bringing together marine biodiversity, environmental and maritime boundaries data in R
+</div>
 
-##  Bringing together marine biodiversity, environmental and maritime boundaries data in R
-Salvador Fernandez 
-Laura Marquez
+Salvador Fernandez, 
+Laura Marquez, 
+Lotte Pohl
 
 May 30th 2022
 
-<img class="plain" data-src="images/logo2.png" width="200" height="180"> 
-<img class="plain" data-src="images/header_lw_logo.png"> 
+<img src="images/vliz.png" style="width:15%">
+<img src="images/lifewatch.png" style="width:15%">
 
-## Proper collection allow humans and machines to find the data 
 
-![](images/sources.jpg){width=60%}
+<!-- ```{r} -->
+<!-- library(lwdataexplorer) -->
+<!-- library(revealjs) -->
+<!-- library(mregions2) -->
+<!-- library(eurobis) -->
+<!-- library(sdmpredictors) -->
+<!-- library(worrms) -->
+<!-- ``` -->
 
-## Reusing data leads to discovery, innovation & scientific integration
 
-![](images/reusedata.jpg)
+## 
+=======
+# The Story
 
-## FAIR principles
+<!-- Having rapid access to reliable and accurate information is vital in different areas: conservation, research, and in creating policies and legislation to protect vulnerable areas of our coasts and oceans. 
 
-![](images/fair-data.png)
+(1) However, we have several sources of information where we can obtain a diverse set of data from and different ways to obtain it. 
+
+so the question is what is the workflow that allows us to obtain data and work with it in the most easy straightforward way possible? -->
+
+<img class="plain" data-src="images2/pic1_.jpg">
+
+
+## 
+=======
+<span style="color:red">*Image of taxon and occurrence data*</span>
+*Solea solea* meme
+
+<!-- ----------------------------------------------------------------------- -->
+
+<!-- ## Proper collections allow humans and machines to find the data -->
+
+<!-- <img class="plain" data-src="images/sources.jpg" style="width:65%"> -->
+
+
+<!-- ## Data reuse  -->
+
+<!-- leads to: discovery, innovation & scientific integration -->
+
+<!-- <img class="plain" data-src="images/reusedata.jpg" style="width:75%"> -->
+
+<!-- There is a diverse set of stakeholders, from academia, industry, funding agencies and scholarly publishers can benefit from having a workflow to access standardized marine biological, chemical, physical, and other different types of data. -->
+
+<img class="plain" data-src="images2/pic2.png" style="width:75%">
+
+
+## 
+
+<!-- An important user of the databases that we are going to work with today is the scientific community. For scientists, obtaining this kind of information is useful to create the basis of different projects or even to obtain data they need to carry them out. Some of the questions that arise for them when creating such projects are -->
+
+##
+
+<img class="plain" data-src="images2/pic3.jpg">
+
+##
+
+<img class="plain" data-src="images2/pic4.jpg">
+
+##
+
+<img class="plain" data-src="images2/pic5.jpg">
+
+##
+
+<img class="plain" data-src="images2/pic6.jpg">
+
+=======
+<!-- ## FAIR principles -->
+
+<!-- <img class="plain" data-src="images/fair-data.png" style="width:85%"> -->
+
+<!-- ----------------------------------------------------------------------- -->
+
+## Who we are
+
+<button style="width:26%">
+  <img src="images/Salva.jpg">
+  <br> **Salva Fernandez** <br/> VLIZ <br/>Science Officer<br/> salvador.fernandez@vliz.be
+</button>
+
+<button style="width:43%">
+  <img src="images/Laura.png">
+  <br> **Laura Marquez** <br /> VLIZ <br/>Science Officer<br/> laura.marquez@vliz.be
+</button>
+
+<button style="width:25%">
+  <img src="images/Lotte.jpg">
+  <br> **Lotte Pohl** <br /> VLIZ/IMBRSea <br/>Intern<br /> lotte.pohl@imbrsea.eu 
+</button>
+
+<!-- <img data-src="images/Salva.jpg" style="float:left;width:20%"/> -->
+<!-- <img src="images/Laura.png" style="float:center;width:20%"/> -->
+<!-- <img src="images/Lotte.jpg" style="float:right;width:20%"/> -->
+<!-- <br /> -->
+<!-- <small style="float:left;">**Salva Fernandez** <br/> VLIZ <br/>Science Officer<br/> salvador.fernandez@vliz.be </small> -->
+<!-- <small style="float:center;">**Laura Marquez** <br /> VLIZ <br/>Science Officer<br/> laura.marquez@vliz.be</small> -->
+<!-- <small style="float:right;">**Lotte Pohl** <br /> VLIZ/IMBRSea <br/>Intern<br /> lotte.pohl@imbrsea.eu </small> -->
+
+## What we will learn
+
+ 1. How to access, query and obtain the data
+
+ 2. Visualize and get them ready for further exploration and analyses using R
+     
+
+## 
+<!-- To answer those type of questions is the aim of this workshop. We are going to learn how to query, access and obtain the data hold in different European Marine databases and for that we are going to work with some of the representative species: 
+Anguila, carp, catfish, the common roach, codfish and flounder.
+-->
+
+<img class="plain" data-src="images2/Anguilla.jpg">
+
+##
+<img class="plain" data-src="images2/carp.jpg">
+
+##
+<img class="plain" data-src="images2/catfish.jpg">
+
+##
+<img class="plain" data-src="images2/commonroach.jpg">
+
+##
+<img class="plain" data-src="images2/cod.jpg">
+
+##
+<img class="plain" data-src="images2/flounder.jpg">
+
 
 ## We will learn
 
- 1. How to access, query and obtain the data 
+<!-- We will learn to visualize and get them ready for further exploration and analyses. All using the R packages available from different European initiatives: lwdataexplorer, eurobis, worrms, mregions, sdmpredictors.
+-->
 
- 2. Visualize and get them ready for further exploration and analyses   
+ 1. How to access, query and obtain the data
 
- 3. To use R packages: lwdataexplorer, eurobis, worrms, mregions, sdmpredictors
+ 2. Visualize and get them ready for further exploration and analyses using R
+     
+=======
+ 3. R packages: 
+     - **lwdataexplorer** ([documentation](https://lifewatch.github.io/lwdataexplorer/index.html), [github](https://github.com/lifewatch/lwdataexplorer))
+     - **eurobis** ([documentation](http://lifewatch.github.io/eurobis/), [github](https://github.com/lifewatch/eurobis))
+     - **worrms** ([documentation](https://docs.ropensci.org/worrms/), [github](https://github.com/ropensci/worrms))
+     - **mregions2** ([documentation](http://lifewatch.github.io/mregions2/), [github](https://github.com/lifewatch/mregions2/))
+     - **sdmpredictors** ([documentation](http://lifewatch.github.io/sdmpredictors/), [github](https://github.com/lifewatch/sdmpredictors))
+     - **emodnetWFS** ([documentation](https://emodnet.github.io/EMODnetWFS/), [github](https://github.com/EMODnet/EMODnetWFS/))
 
-## Exercises of today
+## Overview
 
+<img class="plain" data-src="images/Rpackages_overview.png" style="width:85%">
 
-  1. Access marine regions data
 
-  2. Get data from marine species from LifeWatch
+## Exercises *(TBD)*
 
-  3. Get data from species in EurOBIS
+  1. Get and standardize data
+  
+      * [LifeWatch](https://lifewatch.be): Get marine taxon occurrences
+      * [WoRMS](https://www.marinespecies.org): Get standardised taxon info
+      * [marineregions](https://marineregions.org): Get standardised geospatial data
 
-  4. Access seabed habitat and human activities from EMODnetWFS  
+  2. Get more occurrence data
+  
+      * [EurOBIS](https://www.eurobis.org): Get marine taxon occurrences
 
+  3. Get environmental data
+  
+      * [Bio-ORACLE](https://bio-oracle.org): Get pH, temperature & salinity
+      * [EMODnet Biology](https://emodnet-biology.eu): Get seabed habitats & human activities
 
-## 1. Access marine regions data
+  4. Combine it all together
+  
+  
+## Exercises
 
-The Marine Regions Gazetteer is a standard list of marine georeferenced place names.
+<img class="plain" data-src="images/pipeline.png" style="width:85%">
 
-> Gazetteer: a dictionary of geographical names.
 
-<small>https://www.thefreedictionary.com/gazetteer</small>
+## Timeline (13:30 - 16:30)
 
+  1. **Introduction** *(13:30 - 14:00)*
+  
+  2. **Exercise 1** *(14:00 - 14:45)*
+  
+  3. **Break** *(14:45 - 15:00)*
+  
+  4. **Exercise 2** *(15:00 - 15:30)*
+  
+  5. **Exercise 3** *(15:30 - 15:45)*
+  
+  6. **Coffee Break** *(15:45 - 16:00)*
+  
+  7. **Exercise 4** *(16:30 - 16:15)*
+  
+  8. **Close-off** *(16:15 - 16:30)*
 
-![https://marineregions.org/gazetteer.php?p=search](images/gazetteer_interface.png)
+# Exercise 1
 
-## Gazetteer
+<img src="images/ex1.png" style="width:85%">
 
-Every record has an unique identifier: MRGID
+**Use your own data!**
 
-e.g. The Belgian Exclusive Economic Zone has the MRGID 2350
+## Geospatial Data and Operations
 
-`https://marineregions.org/gazetteer.php?p=details&id=2350`
+<button style="width:40%">
+  <img src="images/intersect.png">
+  <br> **spatial intersection**
+</button>
 
-## Gazetteer
+<button style="width:40%">
+  <img src="images/union.png">
+  <br> **spatial union**
+</button>
 
-![https://marineregions.org/gazetteer.php?p=details&id=2350](images/belgian_part_north_sea1.png)
+<br/>
+<br/>
 
-## mregions2
+[Coordinate Reference System (CRS)](https://docs.qgis.org/2.18/en/docs/gentle_gis_introduction/coordinate_reference_systems.html):
+<br/>
+<img src="images/crs.jpg" style="width:35%">
 
-The `mregions2` R package can download the Gazetteer record into R. Just pass the MRGID:
 
-```{r mr_gaz_record}
-library(mregions2)
-library(magrittr)
+## AphiaID and MRGID
 
-bpns <- mr_gaz_record(2350)
-bpns
-```
+<button style="width:40%">
+  <img src="images/turtle.jpg">
+  <br> AphiaID <br/> https://www.marinespecies.org/aphia.php?p=image&pic=116025&tid=137205 
+</button>
 
-## mregions2
+<button style="width:40%">
+  <img src="images/mrgid.png">
+  <br> MRGID <br /> text
+</button>
 
-If there is a geometry available, the record retrieved has the class `sf`. This means that is ready to be used with most of the R spatial libraries.
+<!-- ## Notes: -->
 
-```{r mr_gaz_record2}
-# library(mapview)
+<!--   - LifeWatch Belgium: a virtual laboratory for biodiversity research -->
+<!--   - `lwdataexplorer` R package: retrieves biodiversity, environmental or genetic data from projects supported by LifeWatch -->
+ <!-- - WoRMS: [World Register of Marine Species](https://www.marinespecies.org/). -->
+ <!-- - Aphia ID: Unique identifier for each taxon -->
+ <!-- - `worrms` R package: performs taxon match -->
+ <!-- - input: scientific name of species or other taxa -->
+ <!-- - output: all data about that taxa in WoRMS, including the AphiaID  -->
+ <!-- - If geometry data is available: retrieved record in R has class `sf` -->
+ <!-- - `sf`: format used for spatial operations -->
 
-# mapview(bpns)
-```
 
-## Exercise 1: use mregions2
+# Exercise 2
 
-`./src/exercises/01_mregions`
+<img src="images/ex2.png" style="width:85%">
 
-```{r exercise1_mregions2, results='asis', echo=FALSE}
-cat(c("```r", readLines("../exercises/01_mregions.R"), "```"), sep = "\n")
-```
+## Raster vs Vector Data
+<br>
+<br>
 
+<button style="width:40%">
+  <img src="images/raster.png">
+  <br> **raster layer**
+</button>
 
+<button style="width:40%">
+  <img src="images/vector.png">
+  <br> **vector layer**
+</button>
 
 
-## 2. Get data from marine species from LifeWatch
+## Dplyr
 
-lwdataexplorer retrieves biodiversity, environmental or genetic data from the projects supported by LifeWatch Belgium, a virtual laboratory for biodiversity research
+ - works with pipes (`%>%`) to increase code readability and avoid nesting
+ - `mean(as.numeric(df$temp))` translates to `df$temp %>% as.numeric() %>% mean()`
+ - cheatsheet [here](https://nyu-cdsc.github.io/learningr/assets/data-transformation.pdf)
 
-```{r lwdataexplorer1}
-# Example: get cetaceans and sonar high frequency data (CPOD)
-# More info: vignette("lwdata_cpod")
-# All the vignettes available: vignette(package = "lwdataexplorer")
-library(lwdataexplorer)
+<img src="images/dplyr.png" style="width:70%"> 
 
-flowcam <- getStationData("2022-01-01", "2022-05-30")
 
-dplyr::glimpse(flowcam)
-```
+<!-- ## Notes -->
 
+<!--   - EurOBIS: European Node of the international Ocean Biodiversity Information System -->
+<!--   - Provides access to distribution data of marine species -->
+<!--   - `eurobis` R package: retrieves EurOBIS data -->
+<!--   - Marine Regions = geographical backbone, WoRMS = taxonomic backbone -->
+<!--   - Data can be accessed via the AphiaID for a specific taxon or the MRGID for a specific place -->
+<!-- The EurOBIS database uses Marine Regions and WoRMS as geographical and taxonomic backbones. -->
+<!-- This means that you can ask for data of an specific taxon via the AphiaID, and data from an specific place with the Marine Regions Gazetteer Identifier or MRGID. -->
+# Exercise 3
 
-## 2. Get data from marine species from LifeWatch
+<img src="images/ex3.png" style="width:85%">
 
-Exercise 2: `./src/exercises/02_lwdataexplorer.R`
+<!-- ## Notes -->
+<!--   - EMODnet: European Marine Observation and Data Network -->
+<!--  - `eurobis` R package: uses the EMODnet-Biology webservices -->
+<!--   - there are web services for other types of data:  -->
+<!--    - physical -->
+<!--    - seabed habitats -->
+<!--    - human activities -->
+<!--  - `EMODnetWFS` R package: can access all these data -->
+<!--  - WFS: Web Feature Service (provides access to vector data) -->
+<!--  - Accessing raster data: available later in 2022 -->
 
-```{r exercise2_lwdataexplorer, results='asis', echo=FALSE}
-cat(c("```r", readLines("../exercises/02_lwdataexplorer.R"), "```"), sep = "\n")
-```
+## Attention
 
+<button style="width:40%">
+  <img src="images/intersect.png">
+  <br> **spatial intersection**
+</button>
 
-## 3. Match species name with WoRMS
+<button style="width:40%">
+  <img src="images/union.png">
+  <br> **spatial intersection**
+</button>
 
-WoRMS is the [World Register of Marine Species](https://www.marinespecies.org/). Each taxon name has an unique identifier: the AphiaID.
+<br>
+<br>
 
-Example: the Loggerhead sea turtle has the AphiaID 137205
-`https://www.marinespecies.org/aphia.php?p=taxdetails&id=137205`
+**Attention:** `raster::extract()` and `sf::st_join` both do a spatial join. The former is used for raster data, the second one for vector data!
 
-![turtle](https://images.marinespecies.org/thumbs/116025_caretta-caretta-female.jpg?w=700)
-<small>License CC-BY-NC-SA 4.0. Retrieved from WoRMS: https://www.marinespecies.org/aphia.php?p=image&pic=116025&tid=137205</small>
+# Exercise 4
 
-## 3. Match species name with WoRMS
+<img src="images/ex4.png" style="width:85%">
 
-WoRMS is the [World Register of Marine Species](https://www.marinespecies.org/). Each taxon name has an unique identifier: the AphiaID.
-
-Example: the Loggerhead sea turtle has the AphiaID 137205
-`https://www.marinespecies.org/aphia.php?p=taxdetails&id=137205`
-
-![https://www.marinespecies.org/aphia.php?p=taxdetails&id=137205](images/worms1.png)
-
-## 3. Match species name with WoRMS
-
-You can use the `worrms` R package to perform a taxon match: you provide scientific names of species or other taxa, and `worrms` gives you all the data about this taxon in WoRMS, including its unique identifier the AphiaID
-
-```{r worms1}
-library(worrms)
-
-turtle <- wm_records_taxamatch("Caretta caretta")
-turtle
-```
-
-
-## 3. Match species name with WoRMS
-
-Exercise 3: `./src/exercises/03_worrms.R`
-
-```{r exercise3_worms1, results='asis', echo=FALSE}
-cat(c("```r", readLines("../exercises/03_worrms.R"), "```"), sep = "\n")
-```
-
-
-
-## 4. Get data from species in EurOBIS
-
-EurOBIS is the European Node of the international Ocean Biodiversity Information System. It provides access to distribution data of marine species.
-
-The EurOBIS data can be retrieved via the `eurobis` R package.
-
-The EurOBIS database uses Marine Regions and WoRMS as geographical and taxonomic backbones.
-
-This means that you can ask for data of an specific taxon via the AphiaID, and data from an specific place with the Marine Regions Gazetteer Identifier or MRGID.
-
-```{r eurobis1}
-library(eurobis)
-
-# Remember:
-# MRGID of the North Sea: 2350
-# AphiaID of the sea turtle Caretta caretta: 137205
-eurobis_data <- eurobis_occurrences(
-  type = "basic", 
-  mrgid = 2350,
-  startdate = "2021-01-01",
-  enddate = "2022-01-01",
-  aphiaid = 137205
-)
-```
-
-
-## 4. Get data from species in EurOBIS
-
-Exercise 4: `./src/exercises/04_eurobis.R`
-
-```{r exercise4_eurobis1, results='asis', echo=FALSE}
-cat(c("```r", readLines("../exercises/04_eurobis.R"), "```"), sep = "\n")
-```
-
-
-## 5. Access seabed habitat and human activities from EMODnetWFS
-
-EMODnet is the European Marine Observation and Data Network. 
-
-The eurobis R package uses the EMODnet-Biology webservices. But there are web services for the other types of data: physical, seabed habitats, human activities...
-
-These data can be accessed all together from the `EMODnetWFS` R package. 
-WFS stands for Web Feature Service. This means that provides access to vector data.
-We are working on including also raster data. This will be available later this year.
-
-```{r emodnetwfs1}
-library(EMODnetWFS)
-
-# Check services available
-emodnet_wfs()
-
-# Start by creating a client (this will improve the performance)
-physics_client <- emodnet_init_wfs_client("physics")
-
-# Explore the layers available
-emodnet_get_wfs_info(physics_client)
-
-# Download the layer EMODnet Physics - DB of the platforms  
-# collecting Water Acoustic Pollution/Noise
-noise <- emodnet_get_layers(
-  wfs = physics_client, 
-  layers = "EP_GEO_INT_UWNO_AL_PP_GLO", 
-  reduce_layers = TRUE
-)
-```
-
-## 5. Access seabed habitat and human activities from EMODnetWFS
-```{r emodnetwfs2}
-dplyr::glimpse(noise)
-```
-
-
-## 5. Access seabed habitat and human activities from EMODnetWFS
-```{r emodnetwfs3}
-library(mapview)
-
-mapview(noise)
-```
-
-## 5. Access seabed habitat and human activities from EMODnetWFS
-
-Exercise 5: `./src/exercises/05_emodnetwfs.R`
-
-```{r exercise5_emodnetwfs1, results='asis', echo=FALSE}
-cat(c("```r", readLines("../exercises/05_emodnetwfs.R"), "```"), sep = "\n")
-```
-
-
-
-## END!
+# Have fun!
 
 
 ```{r render, include = FALSE, eval = FALSE}
