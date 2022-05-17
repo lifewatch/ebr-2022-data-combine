@@ -45,68 +45,7 @@ May 30th 2022
 <!-- ``` -->
 
 
-## 
 =======
-# The Story
-
-<!-- Having rapid access to reliable and accurate information is vital in different areas: conservation, research, and in creating policies and legislation to protect vulnerable areas of our coasts and oceans. 
-
-(1) However, we have several sources of information where we can obtain a diverse set of data from and different ways to obtain it. 
-
-so the question is what is the workflow that allows us to obtain data and work with it in the most easy straightforward way possible? -->
-
-<img class="plain" data-src="images2/pic1_.jpg">
-
-
-## 
-=======
-<span style="color:red">*Image of taxon and occurrence data*</span>
-*Solea solea* meme
-
-<!-- ----------------------------------------------------------------------- -->
-
-<!-- ## Proper collections allow humans and machines to find the data -->
-
-<!-- <img class="plain" data-src="images/sources.jpg" style="width:65%"> -->
-
-
-<!-- ## Data reuse  -->
-
-<!-- leads to: discovery, innovation & scientific integration -->
-
-<!-- <img class="plain" data-src="images/reusedata.jpg" style="width:75%"> -->
-
-<!-- There is a diverse set of stakeholders, from academia, industry, funding agencies and scholarly publishers can benefit from having a workflow to access standardized marine biological, chemical, physical, and other different types of data. -->
-
-<img class="plain" data-src="images2/pic2.png" style="width:75%">
-
-
-## 
-
-<!-- An important user of the databases that we are going to work with today is the scientific community. For scientists, obtaining this kind of information is useful to create the basis of different projects or even to obtain data they need to carry them out. Some of the questions that arise for them when creating such projects are -->
-
-##
-
-<img class="plain" data-src="images2/pic3.jpg">
-
-##
-
-<img class="plain" data-src="images2/pic4.jpg">
-
-##
-
-<img class="plain" data-src="images2/pic5.jpg">
-
-##
-
-<img class="plain" data-src="images2/pic6.jpg">
-
-=======
-<!-- ## FAIR principles -->
-
-<!-- <img class="plain" data-src="images/fair-data.png" style="width:85%"> -->
-
-<!-- ----------------------------------------------------------------------- -->
 
 ## Who we are
 
@@ -133,7 +72,48 @@ so the question is what is the workflow that allows us to obtain data and work w
 <!-- <small style="float:center;">**Laura Marquez** <br /> VLIZ <br/>Science Officer<br/> laura.marquez@vliz.be</small> -->
 <!-- <small style="float:right;">**Lotte Pohl** <br /> VLIZ/IMBRSea <br/>Intern<br /> lotte.pohl@imbrsea.eu </small> -->
 
-## What we will learn
+=======
+# 
+
+<!-- Having rapid access to reliable and accurate information is vital in different areas: conservation, research, and in creating policies and legislation to protect vulnerable areas of our coasts and oceans. 
+
+(1) However, we have several sources of information where we can obtain a diverse set of data from and different ways to obtain it. 
+
+so the question is what is the workflow that allows us to obtain data and work with it in the most easy straightforward way possible? -->
+
+<img class="plain" data-src="images2/pic1_.jpg">
+
+
+## 
+=======
+
+<!-- There is a diverse set of stakeholders, from academia, industry, funding agencies and scholarly publishers can benefit from having a workflow to access standardized marine biological, chemical, physical, and other different types of data. -->
+
+<img class="plain" data-src="images2/pic2.png" style="width:75%">
+
+
+## 
+
+<!-- An important user of the databases that we are going to work with today is the scientific community. For scientists, obtaining this kind of information is useful to create the basis of different projects or even to obtain data they need to carry them out. Some of the questions that arise for them when creating such projects are -->
+
+##
+
+<img class="plain" data-src="images2/pic3.jpg">
+
+##
+
+<img class="plain" data-src="images2/pic4.jpg">
+
+##
+
+<img class="plain" data-src="images2/pic5.jpg">
+
+##
+
+<img class="plain" data-src="images2/pic6.jpg">
+
+
+## We will learn
 
  1. How to access, query and obtain the data
 
