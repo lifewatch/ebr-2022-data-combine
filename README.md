@@ -32,6 +32,7 @@ Open the slides in this link: https://vlizbe.github.io/ebr-2022-data-combine
 
 Then go to `src` and open the first exercise.
 
+Zoom link to session:  https://us06web.zoom.us/j/84158030131
 
 ## Directory structure
 
