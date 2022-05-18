@@ -21,7 +21,7 @@ knitr::opts_chunk$set(collapse = TRUE)
 
 <img src="images/image2.png" style="width:50%">
 
-<div style="font-size: 30px;" >
+<div style="font-size: 43px;" >
 Bringing together marine biodiversity, environmental and maritime boundaries data in R
 </div>
 
@@ -31,34 +31,38 @@ Lotte Pohl
 
 May 30th 2022
 
-<img src="images/vliz.png" style="width:15%">
-<img src="images/lifewatch.png" style="width:15%">
+<button style="width:26%">
+  <img src="images/vliz.png">
+</button>
 
+<button style="width:26%">
+  <img src="images/lifewatch.png">
+</button>
 
-<!-- ```{r} -->
-<!-- library(lwdataexplorer) -->
-<!-- library(revealjs) -->
-<!-- library(mregions2) -->
-<!-- library(eurobis) -->
-<!-- library(sdmpredictors) -->
-<!-- library(worrms) -->
-<!-- ``` -->
+---
 
-# Empowering Biodiversity Research II conference
 <img src="images/image2.png" style="width:50%">
 
-<div style="font-size:25px"> Many more workshops! Discover [**here**](https://www.biodiversity.be/5147/)</div>
+<!-- <div style="font-size:25px"> </div> -->
 
-<br>
+Many more workshops! Discover [*here*](https://www.biodiversity.be/5147/)
 
-Workshop 7 organised by [**INBO**](https://www.vlaanderen.be/inbo/en-gb/homepage/):  
-<br>
-FAIR biodiversity data: what, why and how?
-<br>
-June 2, 10 - 12 a.m
-<br>
-Register [**here**](https://tinyurl.com/3d2z6nkm)
+ - June 9, 9:30 - 16:30 (register [*here*](https://tinyurl.com/yckurpft)) <br>*Linking occurrence data with environmental variables from the ecotopes*
+ - June 29, 09:00 - 17:00 (register [*here*](https://forms.gle/eHsQFze8sLJzPnxq9))<br>*Explore GBIF from the Cloud*
+ 
+ - September 27, 09:30 - 16:30 (register [*here*](https://docs.google.com/forms/d/1SFvlAdIe0YviE7tW0uSffFo7TvnI5S27I-844rWeT00/edit))<br>*Research Data Management workshop: Hands-on introductions to research data management and  publication*
+ 
 
+<!-- <br> -->
+
+<!-- Workshop 7 organised by [**INBO**](https://www.vlaanderen.be/inbo/en-gb/homepage/):   -->
+<!-- <br> -->
+<!-- FAIR biodiversity data: what, why and how? -->
+<!-- <br> -->
+<!-- June 2, 10 - 12 a.m -->
+<!-- <br> -->
+<!-- Register [**here**](https://tinyurl.com/3d2z6nkm) -->
+<!-- write about INBO workshop in Email -->
 
 # The Story
 
@@ -71,11 +75,11 @@ so the question is what is the workflow that allows us to obtain data and work w
 <img src="images2/pic1_.jpg" style="width:85%">
 
 
-## The Story
+<!-- ## The Story -->
 
 <!-- There is a diverse set of stakeholders, from academia, industry, funding agencies and scholarly publishers can benefit from having a workflow to access standardized marine biological, chemical, physical, and other different types of data. -->
 
-<img src="images2/pic2.png" style="width:85%">
+<!-- <img src="images2/pic2.png" style="width:85%"> -->
 
 ## The Story
 <!-- An important user of the databases that we are going to work with today is the scientific community. For scientists, obtaining this kind of information is useful to create the basis of different projects or even to obtain data they need to carry them out. Some of the questions that arise for them when creating such projects are -->
@@ -99,6 +103,8 @@ so the question is what is the workflow that allows us to obtain data and work w
   <br> <div style="font-size:30px">Salva Fernandez</div> <br/> <div style="font-size:25px">VLIZ <br/>Science Officer</div><br/><div style="font-size:20px"> salvador.fernandez@vliz.be</div>
 </button>
 
+<!-- mention that we (Salva) are maintaining R packages in case you have any questions about that either now or in the future -->
+
 <button style="width:43%">
   <img src="images/Laura.png">
   <br> <div style="font-size:30px">Laura Marquez</div> <br/> <div style="font-size:25px">VLIZ <br/>Science Officer</div><br/><div style="font-size:20px"> laura.marquez@vliz.be</div>
@@ -113,57 +119,40 @@ so the question is what is the workflow that allows us to obtain data and work w
 <!-- To answer those type of questions is the aim of this workshop. We are going to learn how to query, access and obtain the data hold in different European Marine databases and for that we are going to work with some of the representative species: 
 Anguila, carp, catfish, the common roach, codfish and flounder.
 -->
-<!-- <button style="width:100%"> -->
+<br/>
+<br/>
+<br/>
+<br/>
+<img src="images/species.png" style="width:100%">
+
+<!-- <button style="width:27%"> -->
 <!--   <img src="images2/Anguilla.jpg"> -->
 <!-- </button> -->
 
-<img src="images2/Anguilla.jpg" style="width:75%">
+<!-- <button style="width:30%"> -->
+<!--   <img src="images2/cod.jpg"> -->
+<!-- </button> -->
 
-## The Species
-<img src="images2/carp.jpg" style="width:75%">
+<!-- <button style="width:30%"> -->
+<!--   <img src="images2/flounder.jpg"> -->
+<!-- </button> -->
 
-## The Species
-<img src="images2/catfish.jpg" style="width:75%">
+<!-- <img src="images2/Anguilla.jpg" style="width:75%"> -->
 
-## The Species
-<img src="images2/commonroach.jpg" style="width:75%">
+<!-- ## The Species -->
+<!-- <img src="images2/carp.jpg" style="width:75%"> -->
 
-## The Species
-<img src="images2/cod.jpg" style="width:75%">
+<!-- ## The Species -->
+<!-- <img src="images2/catfish.jpg" style="width:75%"> -->
 
-## The Species
-<img src="images2/flounder.jpg" style="width:75%">
+<!-- ## The Species -->
+<!-- <img src="images2/commonroach.jpg" style="width:75%"> -->
 
-# The Story (2nd Idea)
+<!-- ## The Species -->
+<!-- <img src="images2/cod.jpg" style="width:75%"> -->
 
-## Imagine...
-
- - You are a marine scientist, doing research in toxicology of mussels
- - You sample 50 mussels at *Long Beach*
- <br>
- <!-- <br> -->
- 
- Long Beach what?
- 
- > different Locations can have the same name!
-
-## How do you clarify, which *Long Beach* you sampled at?
-<img src="images/longbeach.png" style="width:65%">
-
-Long Beach, New South Wales: [http://marineregions.org/mrgid/32658]
-<br>
-Long Beach, New Zealand: [http://marineregions.org/mrgid/57690]
-
-## Your Workflow now?
-
-<br>
-<br>
-
- - making maps in QGIS/ArcGIS
- - getting species info from papers
- - downloading environmental data products/layers online
- 
- > Make it more efficient and do it all from within R!
+<!-- ## The Species -->
+<!-- <img src="images2/flounder.jpg" style="width:75%"> -->
 
 ## What we will learn
 
@@ -215,10 +204,8 @@ Long Beach, New Zealand: [http://marineregions.org/mrgid/57690]
   
 ## Exercises
 <br>
-<br>
 
 <img class="plain" data-src="images/pipeline.png" style="width:100%">
-
 
 ## Timeline (13:30 - 16:30)
 
@@ -238,9 +225,20 @@ Long Beach, New Zealand: [http://marineregions.org/mrgid/57690]
   
   8. **Close-off** *(16:15 - 16:30)*
 
+## House Rules
+
+**Laura**
+
+ - Hackmd.io
+ - zoom breakout room
+ - "You can always ask questions"
+ - "The meeting will be recorded and available *here*"
+
 # Exercise 1
 
 <img src="images/ex1.png" style="width:85%">
+
+<!-- Speaker Note: Introduce ETN -->
 
 **Use your own data!**
 
@@ -304,19 +302,20 @@ cat(c("```r", readLines("../exercises/01_standarize.R"),"```"), sep = "\n")
 
 # 15 min. Break!
 
+<br/>
 <img src="images/break.png" style="width:40%">
 
 # Exercise 2
 
 <img src="images/ex2.png" style="width:100%">
 
-## Dplyr
+<!-- ## Dplyr -->
 
- - works with pipes (`%>%`) to increase code readability and avoid nesting
- - `mean(as.numeric(df$temp))` translates to `df$temp %>% as.numeric() %>% mean()`
- - cheatsheet [here](https://nyu-cdsc.github.io/learningr/assets/data-transformation.pdf)
+<!--  - works with pipes (`%>%`) to increase code readability and avoid nesting -->
+<!--  - `mean(as.numeric(df$temp))` translates to `df$temp %>% as.numeric() %>% mean()` -->
+<!--  - cheatsheet [here](https://nyu-cdsc.github.io/learningr/assets/data-transformation.pdf) -->
 
-<img src="images/dplyr.png" style="width:70%"> 
+<!-- <img src="images/dplyr.png" style="width:70%">  -->
 
 ## Exercise 2
 
@@ -355,15 +354,17 @@ cat(c("```r", readLines("../exercises/02_eurobis.R"),"```"), sep = "\n")
 <br>
 <br>
 
-<button style="width:45%">
-  <img src="images/raster.png">
+<button style="width:49%">
+  <img src="images/raster.png" style="width:60%">
   <br><div style="font-size:30px"> raster layer</div>
 </button>
 
-<button style="width:45%">
-  <img src="images/vector.png">
-  <br> <div style="font-size:30px">**vector layer**</div>
+<button style="width:49%">
+  <img src="images/vector.png" style="width:60%">
+  <br> <div style="font-size:30px">vector layer</div>
 </button>
+
+<!-- I know the raster img itself has poor resolution but I haven't figured out yet how to include vector images in revealjs -->
 
 ## Exercise 3
 
@@ -373,6 +374,7 @@ cat(c("```r", readLines("../exercises/03_environmental.R"),"```"), sep = "\n")
 
 # 15 min. Break!
 
+<br/>
 <img src="images/break.png" style="width:40%">
 
 # Exercise 4
