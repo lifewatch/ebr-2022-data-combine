@@ -416,6 +416,9 @@ cat(c("```r", readLines("../exercises/04_combine.R"),"```"), sep = "\n")
 
 # Questions? Contact us!
 
+Let us know your thoughts!
+https://docs.google.com/forms/d/1YUC01T3boQ2RNrsGwmuwCDzSCR5GPiZHn-tvOM60_04/edit
+
 <button style="width:26%">
   <img src="images/Salva.jpg">
   <br> <div style="font-size:30px">Salva Fernandez</div> <br/> <div style="font-size:25px">VLIZ <br/>Science Officer</div><br/><div style="font-size:20px"> salvador.fernandez@vliz.be</div>
