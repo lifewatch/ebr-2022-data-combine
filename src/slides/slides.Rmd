@@ -1,7 +1,7 @@
 ---
-title: "Bringing together marine biodiversity, environmental and maritime boundaries data in R"
-author: "Salvador Fernandez, Laura Marquez"
-date: "May 30 2022"
+# title: "Bringing together marine biodiversity, environmental and maritime boundaries data in R"
+# author: "Salvador Fernandez, Laura Marquez"
+# date: "May 30 2022"
 output: 
   revealjs::revealjs_presentation:
     css: styles.css
@@ -44,6 +44,22 @@ May 30th 2022
 <!-- library(worrms) -->
 <!-- ``` -->
 
+# Empowering Biodiversity Research II conference
+<img src="images/image2.png" style="width:50%">
+
+<div style="font-size:25px"> Many more workshops! Discover [**here**](https://www.biodiversity.be/5147/)</div>
+
+<br>
+
+Workshop 7 organised by [**INBO**](https://www.vlaanderen.be/inbo/en-gb/homepage/):  
+<br>
+FAIR biodiversity data: what, why and how?
+<br>
+June 2, 10 - 12 a.m
+<br>
+Register [**here**](https://tinyurl.com/3d2z6nkm)
+
+
 # The Story
 
 <!-- Having rapid access to reliable and accurate information is vital in different areas: conservation, research, and in creating policies and legislation to protect vulnerable areas of our coasts and oceans. 
@@ -80,17 +96,17 @@ so the question is what is the workflow that allows us to obtain data and work w
 
 <button style="width:26%">
   <img src="images/Salva.jpg">
-  <br> **Salva Fernandez** <br/> VLIZ <br/>Science Officer<br/> salvador.fernandez@vliz.be
+  <br> <div style="font-size:30px">Salva Fernandez</div> <br/> <div style="font-size:25px">VLIZ <br/>Science Officer</div><br/><div style="font-size:20px"> salvador.fernandez@vliz.be</div>
 </button>
 
 <button style="width:43%">
   <img src="images/Laura.png">
-  <br> **Laura Marquez** <br /> VLIZ <br/>Science Officer<br/> laura.marquez@vliz.be
+  <br> <div style="font-size:30px">Laura Marquez</div> <br/> <div style="font-size:25px">VLIZ <br/>Science Officer</div><br/><div style="font-size:20px"> laura.marquez@vliz.be</div>
 </button>
 
 <button style="width:25%">
   <img src="images/Lotte.jpg">
-  <br> **Lotte Pohl** <br /> VLIZ/IMBRSea <br/>Intern<br /> lotte.pohl@imbrsea.eu 
+  <br><div style="font-size:30px">Lotte Pohl</div> <br/> <div style="font-size:25px">VLIZ/IMBRSea <br/>Intern</div><br/><div style="font-size:20px"> lotte.pohl@imbrsea.eu</div>
 </button>
 
 ## The Species
@@ -176,34 +192,32 @@ Long Beach, New Zealand: [http://marineregions.org/mrgid/57690]
      - **sdmpredictors** ([documentation](http://lifewatch.github.io/sdmpredictors/), [github](https://github.com/lifewatch/sdmpredictors))
      - **emodnetWFS** ([documentation](https://emodnet.github.io/EMODnetWFS/), [github](https://github.com/EMODnet/EMODnetWFS/))
 
-## Data Sources Overview
 
-<img class="plain" data-src="images/Rpackages_overview.png" style="width:85%">
+<!-- ## Exercises *(TBD)* -->
 
+<!--   1. Get and standardize data -->
 
-## Exercises *(TBD)*
+<!--       * [LifeWatch](https://lifewatch.be): Get marine taxon occurrences -->
+<!--       * [WoRMS](https://www.marinespecies.org): Get standardised taxon info -->
+<!--       * [marineregions](https://marineregions.org): Get standardised geospatial data -->
 
-  1. Get and standardize data
-  
-      * [LifeWatch](https://lifewatch.be): Get marine taxon occurrences
-      * [WoRMS](https://www.marinespecies.org): Get standardised taxon info
-      * [marineregions](https://marineregions.org): Get standardised geospatial data
+<!--   2. Get more occurrence data -->
 
-  2. Get more occurrence data
-  
-      * [EurOBIS](https://www.eurobis.org): Get marine taxon occurrences
+<!--       * [EurOBIS](https://www.eurobis.org): Get marine taxon occurrences -->
 
-  3. Get environmental data
-  
-      * [Bio-ORACLE](https://bio-oracle.org): Get pH, temperature & salinity
-      * [EMODnet Biology](https://emodnet-biology.eu): Get seabed habitats & human activities
+<!--   3. Get environmental data -->
 
-  4. Combine it all together
-  
+<!--       * [Bio-ORACLE](https://bio-oracle.org): Get pH, temperature & salinity -->
+<!--       * [EMODnet Biology](https://emodnet-biology.eu): Get seabed habitats & human activities -->
+
+<!--   4. Combine it all together -->
+
   
 ## Exercises
+<br>
+<br>
 
-<img class="plain" data-src="images/pipeline.png" style="width:85%">
+<img class="plain" data-src="images/pipeline.png" style="width:100%">
 
 
 ## Timeline (13:30 - 16:30)
@@ -226,7 +240,7 @@ Long Beach, New Zealand: [http://marineregions.org/mrgid/57690]
 
 # Exercise 1
 
-<img src="images/ex1.png" style="width:55%">
+<img src="images/ex1.png" style="width:85%">
 
 **Use your own data!**
 
@@ -288,10 +302,13 @@ cat(c("```r", readLines("../exercises/01_standarize.R"),"```"), sep = "\n")
  <!-- - If geometry data is available: retrieved record in R has class `sf` -->
  <!-- - `sf`: format used for spatial operations -->
 
+# 15 min. Break!
+
+<img src="images/break.png" style="width:40%">
 
 # Exercise 2
 
-<img src="images/ex2.png" style="width:85%">
+<img src="images/ex2.png" style="width:100%">
 
 ## Dplyr
 
@@ -320,7 +337,7 @@ cat(c("```r", readLines("../exercises/02_eurobis.R"),"```"), sep = "\n")
 
 # Exercise 3
 
-<img src="images/ex3.png" style="width:85%">
+<img src="images/ex3.png" style="width:100%">
 
 <!-- ## Notes -->
 <!--   - EMODnet: European Marine Observation and Data Network -->
@@ -338,14 +355,14 @@ cat(c("```r", readLines("../exercises/02_eurobis.R"),"```"), sep = "\n")
 <br>
 <br>
 
-<button style="width:40%">
+<button style="width:45%">
   <img src="images/raster.png">
-  <br> **raster layer**
+  <br><div style="font-size:30px"> raster layer</div>
 </button>
 
-<button style="width:40%">
+<button style="width:45%">
   <img src="images/vector.png">
-  <br> **vector layer**
+  <br> <div style="font-size:30px">**vector layer**</div>
 </button>
 
 ## Exercise 3
@@ -354,10 +371,13 @@ cat(c("```r", readLines("../exercises/02_eurobis.R"),"```"), sep = "\n")
 cat(c("```r", readLines("../exercises/03_environmental.R"),"```"), sep = "\n")
 ```
 
+# 15 min. Break!
+
+<img src="images/break.png" style="width:40%">
 
 # Exercise 4
 
-<img src="images/ex4.png" style="width:85%">
+<img src="images/ex4.png" style="width:100%">
 
 ## Attention
 
@@ -387,21 +407,25 @@ cat(c("```r", readLines("../exercises/03_environmental.R"),"```"), sep = "\n")
 cat(c("```r", readLines("../exercises/04_combine.R"),"```"), sep = "\n")
 ```
 
+# Recap: Data Sources
+
+<img class="plain" data-src="images/Rpackages_overview.png" style="width:85%">
+
 # Questions? Contact us!
 
 <button style="width:26%">
   <img src="images/Salva.jpg">
-  <br> **Salva Fernandez** <br/> VLIZ <br/>Science Officer<br/> salvador.fernandez@vliz.be
+  <br> <div style="font-size:30px">Salva Fernandez</div> <br/> <div style="font-size:25px">VLIZ <br/>Science Officer</div><br/><div style="font-size:20px"> salvador.fernandez@vliz.be</div>
 </button>
 
 <button style="width:43%">
   <img src="images/Laura.png">
-  <br> **Laura Marquez** <br /> VLIZ <br/>Science Officer<br/> laura.marquez@vliz.be
+  <br> <div style="font-size:30px">Laura Marquez</div> <br/> <div style="font-size:25px">VLIZ <br/>Science Officer</div><br/><div style="font-size:20px"> laura.marquez@vliz.be</div>
 </button>
 
 <button style="width:25%">
   <img src="images/Lotte.jpg">
-  <br> **Lotte Pohl** <br /> VLIZ/IMBRSea <br/>Intern<br /> lotte.pohl@imbrsea.eu 
+  <br><div style="font-size:30px">Lotte Pohl</div> <br/> <div style="font-size:25px">VLIZ/IMBRSea <br/>Intern</div><br/><div style="font-size:20px"> lotte.pohl@imbrsea.eu</div>
 </button>
 
 <br><br>
