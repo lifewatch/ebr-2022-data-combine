@@ -28,7 +28,7 @@ The exercises are in: `./src/exercises/`. These are plain R scripts where the e
 This is an hybrid workshop in which we will use zoom to meet online and hackmd.io to share our solutions to each exercises:
 
 * Zoom: https://us06web.zoom.us/j/84158030131
-* Hackmd.io: https://hackmd.io/yOf5vGvvT5GN9X5EGkoeIw?view
+* Hackmd.io: hackmd.io/@fw0N_GjzTbeK4x4_tgcJLg/B1yOPbWD9
 
 
 
