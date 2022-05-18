@@ -118,20 +118,57 @@ Anguila, carp, catfish, the common roach, codfish and flounder.
 ## The Species
 <img src="images2/flounder.jpg" style="width:75%">
 
+# The Story (2nd Idea)
+
+## Imagine...
+
+ - You are a marine scientist, doing research in toxicology of mussels
+ - You sample 50 mussels at *Long Beach*
+ <br>
+ <!-- <br> -->
+ 
+ Long Beach what?
+ 
+ > different Locations can have the same name!
+
+## How do you clarify, which *Long Beach* you sampled at?
+<img src="images/longbeach.png" style="width:65%">
+
+Long Beach, New South Wales: [http://marineregions.org/mrgid/32658]
+<br>
+Long Beach, New Zealand: [http://marineregions.org/mrgid/57690]
+
+## Your Workflow now?
+
+<br>
+<br>
+
+ - making maps in QGIS/ArcGIS
+ - getting species info from papers
+ - downloading environmental data products/layers online
+ 
+ > Make it more efficient and do it all from within R!
 
 ## What we will learn
 
 <!-- We will learn to visualize and get them ready for further exploration and analyses. All using the R packages available from different European initiatives: lwdataexplorer, eurobis, worrms, mregions, sdmpredictors.
 -->
+ 1. Standardize your data
+ 
+ 2. Retrieve more data to include in analysis later on
+ 
+ 3. Get environmental data
+ 
+ 4. Combine it all into 1 dataset
 
- 1. How to access, query and obtain the data
+ <!-- 1. How to access, query and obtain the data -->
 
- 2. Visualize and get them ready for further exploration and analyses using R
+ <!-- 2. Visualize and get them ready for further exploration and analyses using R -->
 
 <!-- <br> -->
 <!-- <br> -->
 
- 3. R packages: 
+ - R packages: 
      - **lwdataexplorer** ([documentation](https://lifewatch.github.io/lwdataexplorer/index.html), [github](https://github.com/lifewatch/lwdataexplorer))
      - **eurobis** ([documentation](http://lifewatch.github.io/eurobis/), [github](https://github.com/lifewatch/eurobis))
      - **worrms** ([documentation](https://docs.ropensci.org/worrms/), [github](https://github.com/ropensci/worrms))
@@ -181,7 +218,7 @@ Anguila, carp, catfish, the common roach, codfish and flounder.
   
   5. **Exercise 3** *(15:30 - 15:45)*
   
-  6. **Coffee Break** *(15:45 - 16:00)*
+  6. **Break** *(15:45 - 16:00)*
   
   7. **Exercise 4** *(16:30 - 16:15)*
   
@@ -189,13 +226,13 @@ Anguila, carp, catfish, the common roach, codfish and flounder.
 
 # Exercise 1
 
-<img src="images/ex1.png" style="width:75%">
+<img src="images/ex1.png" style="width:55%">
 
 **Use your own data!**
 
 ## Geospatial Data and Operations
 
-<img src="images/spatial_ops.png" style="width:75%">
+<img src="images/spatial_ops.png" style="width:55%">
 
 <!-- <br/> -->
 <!-- <br/> -->
@@ -324,7 +361,7 @@ cat(c("```r", readLines("../exercises/03_environmental.R"),"```"), sep = "\n")
 
 ## Attention
 
-<img src="images/spatial_ops.png" style="width:75%">
+<img src="images/spatial_ops.png" style="width:65%">
 
 <!-- <br/> -->
 <!-- <br/> -->
