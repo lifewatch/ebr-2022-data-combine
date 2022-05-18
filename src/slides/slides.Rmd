@@ -15,9 +15,16 @@ output:
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-knitr::opts_chunk$set(collapse = TRUE)
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  cache = TRUE,
+  warning=FALSE,
+  message = FALSE
+)
 ```
+
+
 
 <img src="images/image2.png" style="width:50%">
 
@@ -187,72 +194,320 @@ Anguila, carp, catfish, the common roach, codfish and flounder.
   
   8. **Close-off** *(16:15 - 16:30)*
 
-# Exercise 1
+# Exercise 1: standardize
 
 <img src="images/ex1.png" style="width:85%">
 
 **Use your own data!**
 
-## Geospatial Data and Operations
+## Dataset example: Belgian LifeWatch Observatory data
 
-<br/>
-<br/>
+<!-- 
+Collage different data
+-->
 
-<button style="width:45%">
-  <img src="images/intersect.png">
-  <br> **spatial intersection**
-</button>
+## Dataset example: Belgian LifeWatch Observatory data
 
-<button style="width:45%">
-  <img src="images/union.png">
-  <br> **spatial union**
-</button>
+```{r lwdata1, results = 'hide'}
+library(lwdataexplorer)
 
-<br/>
+zoo <- getZooscanData("2021-01-01", "2022-01-01")
+
+head(zoo)
+```
+
+```{r lwdata1-1, echo = FALSE}
+library(kableExtra)
+
+kbl(head(zoo)) %>%
+  kable_paper() %>%
+  scroll_box(width = "100%", height = "300px")
+```
+
+## Dataset example: Belgian LifeWatch Observatory data
+
+We will transform the dataset into a **Simple Feature** object:
+
+```{r lwdata2}
+library(sf)
+
+class(zoo)
+
+zoo_sf <- st_as_sf(zoo, coords = c("Longitude", "Latitude"), crs = 4326, remove = FALSE)
+
+class(zoo_sf)
+
+```
+
+sf cheatsheet: https://raw.githubusercontent.com/rstudio/cheatsheets/main/sf.pdf
 
 >[Coordinate Reference Systems (CRS)](https://docs.qgis.org/2.18/en/docs/gentle_gis_introduction/coordinate_reference_systems.html) provide a standardized way of describing locations.
 <br> 
 <small>https://www.nceas.ucsb.edu</small>
 <!-- <img src="images/crs.jpg" style="width:35%"> -->
 
+## Dataset example: Belgian LifeWatch Observatory data
 
-## AphiaID and MRGID
+```{r lwdata3}
+plot(st_geometry(zoo_sf))
+```
 
-<br/>
-<br/>
 
-<button style="width:40%">
-  <img src="images/turtle.jpg">
-  <br> AphiaID<br>Unique identifier of a taxon<br/> https://www.marinespecies.org/aphia.php?p=image&pic=116025&tid=137205 
-</button>
 
-<button style="width:40%">
-  <img src="images/mrgid.png">
-  <br>Marine Regions Geographic IDentifier (MRGID)<br />Unique identifier of an entry in the [marineregions.org](https://marineregions.org/mrgid.php) database
-</button>
+## Dataset example: Belgian LifeWatch Observatory data
+<!-- 
+ETN tracking data picture
+-->
+```r
+etn <- getEtnData()
+```
 
-## Exercise 1
+
+## Taxonomic match with WoRMS
+
+<!-- Logo WoRMS and link -->
+<!-- Two species names, one accepted and another that is not, each has an ID -->
+
+## Taxonomic match with WoRMS
+```{r worrms1, results = 'hide'}
+library(worrms)
+
+taxa <- wm_records_taxamatch("Caretta caretta")
+
+taxa[[1]]
+
+```
+
+```{r worrms1-1, echo = FALSE}
+library(kableExtra)
+
+kbl(taxa[[1]]) %>%
+  kable_paper() %>%
+  scroll_box(width = "100%", height = "200px")
+```
+
+## AphiaID: Unique identifier of a taxon in WoRMS
+
+```
+https://www.marinespecies.org/aphia.php?p=taxdetails&id=137205
+```
+<img src="images/turtle.jpg" width="40%" height="auto">
+
+
+
+
+## Geographic standard: Marine Regions Gazetteer
+
+<!-- Logo MR and link -->
+<!-- Two regions with same name -->
+
+## Geographic standard: Marine Regions Gazetteer
+
+```{r mregions2-1, eval = FALSE}
+library(mregions2)
+
+# Find all Long beaches
+mr_gaz_records_by_names("Long beach")
+
+# Get only one
+mr_gaz_record(32658)
+```
+
+```{r mregions2-1-1, echo = FALSE}
+# TODO: fix mregions2
+# library(kableExtra)
+# 
+# kbl(mr_gaz_record(32658)) %>%
+#   kable_paper() %>%
+#   scroll_box(width = "100%", height = "300px")
+```
+
+```{r mregions2-2, echo=FALSE}
+# lb1 <- mr_gaz_record(32658)
+# lb2 <- mr_gaz_record(57690)
+# 
+# lb <- rbind(lb1, lb2)
+# 
+# plot(lb)
+```
+
+## MRGID: Unique identifier of a record of the [marineregions.org](https://marineregions.org/mrgid.php) Gazetteer
+
+```
+https://marineregions.org/gazetteer.php?p=details&id=3293
+```
+<img src="images/mrgid.png" width="40%" height="auto">
+
+## Spatial filtering
+
+```{r mregions2-spfilter, eval=FALSE}
+library(sf)
+# bpns <- mr_gaz_record(32658)
+
+# mapview(list(zoo_sf, bpns))
+
+# st_intersection(zoo_sf, bpns)
+```
+
+<!-- get drawing or whatever to show spatial filter -->
+
+## Exercise 1: Standardize
+
+`./src/exercises/01_standardize.R`
 
 ```{r exercise1, results='asis', echo=FALSE}
 cat(c("```r", readLines("../exercises/01_standarize.R"),"```"), sep = "\n")
 ```
 
-<!-- ## Notes: -->
-
-<!--   - LifeWatch Belgium: a virtual laboratory for biodiversity research -->
-<!--   - `lwdataexplorer` R package: retrieves biodiversity, environmental or genetic data from projects supported by LifeWatch -->
- <!-- - WoRMS: [World Register of Marine Species](https://www.marinespecies.org/). -->
- <!-- - Aphia ID: Unique identifier for each taxon -->
- <!-- - `worrms` R package: performs taxon match -->
- <!-- - input: scientific name of species or other taxa -->
- <!-- - output: all data about that taxa in WoRMS, including the AphiaID  -->
- <!-- - If geometry data is available: retrieved record in R has class `sf` -->
- <!-- - `sf`: format used for spatial operations -->
-
 
 # Exercise 2
 
 <img src="images/ex2.png" style="width:85%">
+
+## EurOBIS
+
+Logo EurOBIS
+
+
+## EurOBIS
+Example: get all occurrences of the Atlantic Cod (_Gadus morhua_; aphiaID = 126436) in the Belgian Part of the North Sea (MRGID = 3293)
+
+```{r eurobis1, results='hide'}
+library(eurobis)
+df <- eurobis_occurrences_basic(aphiaid = 126436, mrgid = 3293)
+head(df)
+```
+
+```{r eurobis1-1, echo = FALSE}
+kbl(head(df)) %>%
+  kable_paper() %>%
+  scroll_box(width = "100%", height = "300px")
+```
+
+## EurOBIS
+```{r eurobis1-2}
+plot(st_geometry(df))
+```
+
+## Data manipulation in R: dplyr
+
+We will work with `dplyr`. It uses pipes (`%>%`) to increase code readability and avoid nesting
+
+```r
+# base R
+df$datecollected <- as.Date(df$datecollected)
+```
+
+```r  
+# dplyr
+library(dplyr)
+df <- df %>%
+  mutate(datecollected = as.Date(datecollected))
+```
+cheatsheet: https://nyu-cdsc.github.io/learningr/assets/data-transformation.pdf
+
+
+## Exercise 2
+
+`./src/exercises/02_eurobis.R`
+
+```{r exercise2, results='asis', echo=FALSE}
+cat(c("```r", readLines("../exercises/02_eurobis.R"),"```"), sep = "\n")
+```
+
+
+
+# Exercise 3
+
+<img src="images/ex3.png" style="width:85%">
+
+
+## EMODnetWFS
+
+Explore and download geospatial data from EMODnet. 
+
+```{r emodnetwfs1, results='hide', message=FALSE}
+library(EMODnetWFS)
+
+client <- emodnet_init_wfs_client("human_activities")
+
+class(client)
+#> [1] "WFSClient"         "OWSClient"         "OGCAbstractObject" "R6"
+```
+
+More info at https://emodnet.github.io/EMODnetWFS/
+
+## EMODnetWFS
+
+```
+emodnet_get_wfs_info(client)
+```
+
+```{r emodnetwfs2-1, echo = FALSE}
+kbl(emodnet_get_wfs_info(client)[1:50,]) %>%
+  kable_paper() %>%
+  scroll_box(width = "100%", height = "300px")
+```
+
+## EMODnetWFS
+
+```{r emodnetwfs3, results='hide'}
+layer <- emodnet_get_layers(client, layers = "microalgae", 
+                            crs = 4326, reduce_layers = TRUE)
+layer
+```
+
+```{r emodnetwfs3-1, echo = FALSE}
+kbl(layer[1:20,]) %>%
+  kable_paper() %>%
+  scroll_box(width = "100%", height = "300px")
+```
+
+
+## Bio-Oracle
+
+We will use `sdmpredictors` to load raster layers with environmental data from present and future conditions.
+
+More info https://bio-oracle.org/code.php or http://lifewatch.github.io/sdmpredictors/
+
+```{r sdm1, results='hide'}
+library(sdmpredictors)
+
+# Find all layers available from the latest version
+list_layers("Bio-ORACLE", version = 2.2)
+list_layers_future("Bio-ORACLE", version = 2.2)
+
+# Pass layer code for max sea surface temperature
+load_layers("BO22_tempmax_ss")
+```
+
+## Bio-Oracle
+```{r sdm2, results='hide'}
+list_layers("Bio-ORACLE", version = 2.2)
+```
+
+```{r sdm2-1, echo = FALSE}
+kbl(list_layers("Bio-ORACLE", version = 2.2)) %>%
+  kable_paper() %>%
+  scroll_box(width = "100%", height = "400px")
+```
+
+## Bio-Oracle
+```{r sdm3, results='hide'}
+list_layers_future("Bio-ORACLE", version = 2.2)
+```
+
+```{r sdm3-1, echo = FALSE}
+kbl(list_layers_future("Bio-ORACLE", version = 2.2)) %>%
+  kable_paper() %>%
+  scroll_box(width = "100%", height = "400px")
+```
+
+## Bio-Oracle
+```{r sdm4}
+load_layers("BO22_tempmean_ss")
+```
+
 
 ## Raster vs Vector Data
 <br>
@@ -270,75 +525,58 @@ cat(c("```r", readLines("../exercises/01_standarize.R"),"```"), sep = "\n")
 </button>
 
 
-## Dplyr
-
- - works with pipes (`%>%`) to increase code readability and avoid nesting
- - `mean(as.numeric(df$temp))` translates to `df$temp %>% as.numeric() %>% mean()`
- - cheatsheet [here](https://nyu-cdsc.github.io/learningr/assets/data-transformation.pdf)
-
-<img src="images/dplyr.png" style="width:70%"> 
-
-## Exercise 2
-
-
-```{r exercise2, results='asis', echo=FALSE}
-cat(c("```r", readLines("../exercises/02_eurobis.R"),"```"), sep = "\n")
-```
-
-<!-- ## Notes -->
-
-<!--   - EurOBIS: European Node of the international Ocean Biodiversity Information System -->
-<!--   - Provides access to distribution data of marine species -->
-<!--   - `eurobis` R package: retrieves EurOBIS data -->
-<!--   - Marine Regions = geographical backbone, WoRMS = taxonomic backbone -->
-<!--   - Data can be accessed via the AphiaID for a specific taxon or the MRGID for a specific place -->
-<!-- The EurOBIS database uses Marine Regions and WoRMS as geographical and taxonomic backbones. -->
-<!-- This means that you can ask for data of an specific taxon via the AphiaID, and data from an specific place with the Marine Regions Gazetteer Identifier or MRGID. -->
-
-# Exercise 3
-
-<img src="images/ex3.png" style="width:85%">
-
-<!-- ## Notes -->
-<!--   - EMODnet: European Marine Observation and Data Network -->
-<!--  - `eurobis` R package: uses the EMODnet-Biology webservices -->
-<!--   - there are web services for other types of data:  -->
-<!--    - physical -->
-<!--    - seabed habitats -->
-<!--    - human activities -->
-<!--  - `EMODnetWFS` R package: can access all these data -->
-<!--  - WFS: Web Feature Service (provides access to vector data) -->
-<!--  - Accessing raster data: available later in 2022 -->
-
-## Attention
-
-<br/>
-<br/>
-
-<button style="width:45%">
-  <img src="images/intersect.png">
-  <br> **spatial intersection**
-</button>
-
-<button style="width:45%">
-  <img src="images/union.png">
-  <br> **spatial union**
-</button>
-
-<br/>
-
-**Attention:** `raster::extract()` and `sf::st_join` both do a spatial join. The former is used for raster data, the second one for vector data!
-
 ## Exercise 3
+
+`./src/exercises/03_environmental.R`
 
 ```{r exercise3, results='asis', echo=FALSE}
 cat(c("```r", readLines("../exercises/03_environmental.R"),"```"), sep = "\n")
 ```
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Exercise 4
 
 <img src="images/ex4.png" style="width:85%">
+
+
+## Spatial join
+
+Warning: same principle but works different!
+
+Vector data
+```r
+library(sf)
+
+st_join(df, vector_layer)
+```
+
+Raster data
+```r
+library(raster)
+
+df_as_sp <- as_Spatial(df)
+
+extract(raster_layer, df_as_sp)
+```
 
 ## Exercise 4
 
@@ -351,7 +589,7 @@ cat(c("```r", readLines("../exercises/04_combine.R"),"```"), sep = "\n")
 <button style="width:26%">
   <img src="images/Salva.jpg">
   <br> **Salva Fernandez** <br/> VLIZ <br/>Science Officer<br/> salvador.fernandez@vliz.be
-</button>
+</button>kableExtra::kable(df)
 
 <button style="width:43%">
   <img src="images/Laura.png">
@@ -364,7 +602,8 @@ cat(c("```r", readLines("../exercises/04_combine.R"),"```"), sep = "\n")
 </button>
 
 <br><br>
-**And now have fun with the workshop!**
+Or open an issue on GitHub! 
+https://github.com/vlizBE/ebr-2022-data-combine/issues
 
 ```{r render, include = FALSE, eval = FALSE}
 rmarkdown::render("slides.Rmd", output_dir = "../../docs", output_file = "index.html")

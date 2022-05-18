@@ -46,7 +46,10 @@ basic <- eurobis_occurrences_basic(
 #---------------------------------------------------------------------------------------------
 # Exercise 2.3.:
 #   - Wrangle the ETN dataset to fit the column names of eurobis.
-#   - Get only unique combinations of values
+#   - Select the following columns: datecollected, decimallongitude, decimallatitude, 
+#     scientificname, aphiaid, scientificnameaccepted
+#   - As we are not considering the individual fishes tracked but only presences, there will be 
+#     duplicates. Get unique combination of values
 #   - Bind the rows of both datasets
 #
 # Hint: the aphiaID from EurOBIS comes with a full URL. Use `gsub()` or `stringr::str_replace()` 

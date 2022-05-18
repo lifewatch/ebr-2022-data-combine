@@ -10,8 +10,7 @@ library(sf)
 
 #---------------------------------------------------------------------------------------------
 # Exercise 1.1.: 
-# - Get fish data from the European Tracking Network of the year 2021
-# - Remove white spaces in the species names
+# - Get fish tracking data from the European Tracking Network of the year 2015
 #
 # Hint: use `?getEtnData()` to find more information
 #---------------------------------------------------------------------------------------------
