@@ -56,6 +56,6 @@ ebr-2022-data-combine/
 
 
 
-## Acknowledgments 🙏
+## Acknowledgements 🙏
 
 This workshop is inspired on the INBO Coding Club sessions. You can find more info here: https://inbo.github.io/coding-club/
