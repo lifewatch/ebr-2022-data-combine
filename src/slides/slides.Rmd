@@ -227,12 +227,13 @@ Anguila, carp, catfish, the common roach, codfish and flounder.
 
 ## House Rules
 
-**Laura**
-
- - Hackmd.io
- - zoom breakout room
- - "You can always ask questions"
- - "The meeting will be recorded and available *here*"
+ - Open the slides https://vlizbe.github.io/ebr-2022-data-combine
+ - Open your RStudio project 
+ - Make sure your environment (renv) is set up beforehand (link to tutorial)
+ - Let's code!
+ - You can share your code (hackmd.io/@fw0N_GjzTbeK4x4_tgcJLg/B1yOPbWD9) or discuss with others in the breakout room
+ - Revision of each exercise
+ - Any question you can drop it in the chat 
 
 # Exercise 1
 
