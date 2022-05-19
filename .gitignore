@@ -3,3 +3,5 @@
 .RData
 .Ruserdata
 /data
+/docs/index_files
+/src/slides/slides_cache
