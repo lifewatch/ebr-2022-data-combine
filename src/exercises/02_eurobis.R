@@ -3,6 +3,7 @@ library(eurobis)
 
 # Helper library
 library(dplyr)
+library(tidyr)
 
 #---------------------------------------------------------------------------------------------
 # Exercise 2.1.: 
@@ -84,12 +85,17 @@ df <- etn %>%
 #---------------------------------------------------------------------------------------------
 # Bonus Exercise 2.4.: 
 #  - Repeat the query adding all the information available in EurOBIS
-#  - Get all the distinct values of the parameters_* coumns
-#  - Filter only records with count of individuals
+#  - Get all the distinct values of the parameters_* columns
+#  - Pivot the table to turn the values of "parameter" into columns, with the "parameter_values"
+#    as values. Select only a few columns and use `distinct()`
 #
 # Hint: use `eurobis_occurrences_full_and_parameters()`
+# Hint: use `st_drop_geometry()` to simplify
+# Hint: pivot with: `tidyr::pivot_wider()` and the arguments `names_from` and `values_from`
 # Hint: more information here: https://www.emodnet-biology.eu/emodnet-data-format
 #---------------------------------------------------------------------------------------------
+
+# Download all the info available in EurOBIS
 full_emof <- eurobis_occurrences_full_and_parameters(
   mrgid = mrgid,
   aphiaid = species_matched$AphiaID,
@@ -107,10 +113,13 @@ full_emof %>%
   distinct() %>% 
   View()
 
-
-# Query only Counts
-full_emof <- full_emof %>%
-  filter(parameter_measurementtypeid == "http://vocab.nerc.ac.uk/collection/P01/current/OCOUNT01/")
+# Pivot parameter into columns
+full_emof %>% 
+  st_drop_geometry() %>%
+  select(scientificname, datecollected, decimallongitude, decimallatitude, parameter, parameter_value) %>%
+  pivot_wider(names_from = parameter, values_from = parameter_value) %>%
+  distinct() %>%
+  View()
 
 
 
