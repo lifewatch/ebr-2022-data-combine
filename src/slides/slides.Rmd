@@ -253,6 +253,12 @@ class(zoo_sf)
 <br> 
 <small>https://www.nceas.ucsb.edu</small>
 
+## Dataset example: Belgian LifeWatch Observatory data
+```{r lwdata3}
+library(mapview)
+mapview(zoo_sf)
+```
+
 
 ## Dataset example: Belgian LifeWatch Observatory data
 
@@ -302,11 +308,11 @@ https://www.marinespecies.org/aphia.php?p=taxdetails&id=137205
 ## Geographic standard: Marine Regions Gazetteer
 
 <a href="https://marineregions.org/">
-<img src="images/MR_logo_text_all.png">
+<img src="images/mr_web.png" width="85%" height="auto">
 </a>
 
 ## Geographic standard: Marine Regions Gazetteer
-```{r mregions2-1}
+```{r mregions2-1, results = 'hide'}
 library(mregions2)
 
 # Find all region names starting with "Belgian"
@@ -314,14 +320,21 @@ belgian_gaz <- mr_gaz_records_by_names("Belgian")
 belgian_gaz
 ```
 
+```{r mregions2-1-1, echo = FALSE}
+kbl(belgian_gaz) %>%
+  kable_paper() %>%
+  scroll_box(width = "100%", height = "300px")
+```
+
+See the `mregions2` R package [documentation here](https://github.com/lifewatch/mregions2)
 
 ## Geographic standard: Marine Regions Gazetteer
 
-```{r mregions2-2, eval = FALSE}
+```{r mregions2-2}
 # Get only Belgian Territorial Sea
-# FIX MR PACKAGE
+library(mapview)
 territorial_sea <- mr_gaz_record(49010)
-territorial_sea
+mapview(territorial_sea)
 ```
 
 
@@ -353,18 +366,25 @@ We will perform an spatial intersection
 
 ## Spatial filtering
 
-```r
+```{r spfilter, message=FALSE}
 library(sf)
 
 nrow(zoo_sf)
-#> [1] 437
 
 zoo_sf_belgium <- st_intersection(zoo_sf, territorial_sea)
 
-nrow(zoo_sf)
-#> [1] 36
+nrow(zoo_sf_belgium)
 ```
 
+## Spatial filtering
+```{r spfilter1}
+mapview(list(zoo_sf, territorial_sea))
+```
+
+## Spatial filtering
+```{r spfilter2}
+mapview(list(zoo_sf_belgium, territorial_sea))
+```
 
 ## Exercise 1: Standardize
 
@@ -388,7 +408,9 @@ cat(c("```r", readLines("../exercises/01_standarize.R"),"```"), sep = "\n")
 
 ## EurOBIS
 
-Logo EurOBIS
+<a href="https://eurobis.org/">
+<img src="images/eurobis.png" width="85%" height="auto">
+</a>
 
 
 ## EurOBIS
@@ -406,9 +428,11 @@ kbl(head(df)) %>%
   scroll_box(width = "100%", height = "300px")
 ```
 
+See the `eurobis` R package [documentation here](http://lifewatch.github.io/eurobis/)
+
 ## EurOBIS
 ```{r eurobis1-2}
-plot(st_geometry(df))
+mapview(df)
 ```
 
 ## Data manipulation in R: dplyr
@@ -426,7 +450,8 @@ library(dplyr)
 df <- df %>%
   mutate(datecollected = as.Date(datecollected))
 ```
-cheatsheet: https://nyu-cdsc.github.io/learningr/assets/data-transformation.pdf
+
+- `sf` [cheatsheet here](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-transformation.pdf)
 
 
 ## Exercise 2
@@ -449,6 +474,20 @@ cat(c("```r", readLines("../exercises/02_eurobis.R"),"```"), sep = "\n")
 
 <img src="images/ex3.png" style="width:85%">
 
+## Raster vs Vector Data
+<br>
+<br>
+<br>
+
+<button style="width:40%">
+  <img src="images/raster.png">
+  <br> **raster layer**
+</button>
+
+<button style="width:40%">
+  <img src="images/vector.png">
+  <br> **vector layer**
+</button>
 
 ## EMODnetWFS
 
@@ -464,7 +503,7 @@ kbl(emodnet_wfs()) %>%
   kable_paper() %>%
   scroll_box(width = "100%", height = "250px")
 ```
-More info at https://emodnet.github.io/EMODnetWFS/
+See the `EMODnetWFS` R package [documentation here](https://emodnet.github.io/EMODnetWFS/)
 
 ## EMODnetWFS
 
@@ -508,7 +547,7 @@ kbl(head(emodnet_layer)) %>%
 ## EMODnetWFS: Download one layer
 
 ```{r emodnetwfs3-2}
-# Some wrangling to plot
+# Some editing needed to be able to plot
 emodnet_layer <- emodnet_layer %>% 
   st_cast(to = "GEOMETRYCOLLECTION") %>% 
   st_collection_extract(type = "POLYGON")
@@ -522,7 +561,7 @@ mapview(emodnet_layer)
 Marine data layers for ecological modelling
 
 - `sdmpredictors` can download Bio-Oracle layers
-- More info at [bio-oracle.org](https://bio-oracle.org/index.php) or [sdmpredictors](http://lifewatch.github.io/sdmpredictors/)
+- More info at [bio-oracle.org](https://bio-oracle.org/index.php) 
 
 ```{r sdm1, results='hide'}
 library(sdmpredictors)
@@ -535,6 +574,8 @@ list_layers_future("Bio-ORACLE", version = 2.2)
 # Pass layer code for max sea surface temperature
 load_layers("BO22_RCP26_2050_chlomean_ss")
 ```
+
+See the `sdmpredictors` R package [documentation here](http://lifewatch.github.io/sdmpredictors/)
 
 ## Bio-Oracle
 ```{r sdm2, results='hide'}
@@ -568,22 +609,6 @@ bio_oracle
 ```{r sdm5}
 raster::plot(bio_oracle)
 ```
-
-
-## Raster vs Vector Data
-<br>
-<br>
-<br>
-
-<button style="width:40%">
-  <img src="images/raster.png">
-  <br> **raster layer**
-</button>
-
-<button style="width:40%">
-  <img src="images/vector.png">
-  <br> **vector layer**
-</button>
 
 
 ## Exercise 3
