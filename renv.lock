@@ -892,6 +892,29 @@
       "Hash": "98138e0994d41508c7a6b84a0600cfcb",
       "Requirements": []
     },
+    "kableExtra": {
+      "Package": "kableExtra",
+      "Version": "1.3.4",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "49b625e6aabe4c5f091f5850aba8ff78",
+      "Requirements": [
+        "digest",
+        "glue",
+        "htmltools",
+        "knitr",
+        "magrittr",
+        "rmarkdown",
+        "rstudioapi",
+        "rvest",
+        "scales",
+        "stringr",
+        "svglite",
+        "viridisLite",
+        "webshot",
+        "xml2"
+      ]
+    },
     "keyring": {
       "Package": "keyring",
       "Version": "1.3.0",
@@ -1251,8 +1274,8 @@
       "RemoteRepo": "mregions2",
       "RemoteUsername": "lifewatch",
       "RemoteRef": "HEAD",
-      "RemoteSha": "286305ef0a0936c5e6f075477a2ce6cb927981e9",
-      "Hash": "58e4b959bdbb888ce60294e2dd93e9dd",
+      "RemoteSha": "e2d958affdc78c79cc30c5f4afa00d51be9deb6c",
+      "Hash": "95cc982481eefa4d8c2f1b29582f6694",
       "Requirements": [
         "checkmate",
         "glue",
@@ -1306,8 +1329,8 @@
       "RemoteRepo": "ows4R",
       "RemoteUsername": "eblondel",
       "RemoteRef": "HEAD",
-      "RemoteSha": "8d80b530a381c263c86667479eb9e08148fe1f92",
-      "Hash": "8835a595466079a6215fed19617bb58b",
+      "RemoteSha": "f99aa5abab21985da9d64dcf303e69cca98e5629",
+      "Hash": "83c35587f9a35ddab7478031b9929b4c",
       "Requirements": [
         "R6",
         "XML",
@@ -1633,6 +1656,22 @@
       "Hash": "06c85365a03fdaf699966cc1d3cf53ea",
       "Requirements": []
     },
+    "rvest": {
+      "Package": "rvest",
+      "Version": "1.0.0",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "74b905b0076e1de6e27f540c95ba68d5",
+      "Requirements": [
+        "httr",
+        "lifecycle",
+        "magrittr",
+        "rlang",
+        "selectr",
+        "tibble",
+        "xml2"
+      ]
+    },
     "sass": {
       "Package": "sass",
       "Version": "0.4.0",
@@ -1685,6 +1724,17 @@
         "R.utils",
         "raster",
         "rgdal"
+      ]
+    },
+    "selectr": {
+      "Package": "selectr",
+      "Version": "0.4-2",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "3838071b66e0c566d55cc26bd6e27bf4",
+      "Requirements": [
+        "R6",
+        "stringr"
       ]
     },
     "servr": {
