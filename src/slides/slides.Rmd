@@ -194,6 +194,12 @@ Anguila, carp, catfish, the common roach, codfish and flounder.
   
   8. **Close-off** *(16:15 - 16:30)*
 
+<!----------------------------------------------->
+<!--                                           -->
+<!--             Begin Exercise 1              -->
+<!--                                           -->
+<!----------------------------------------------->
+
 # Exercise 1: standardize
 
 <img src="images/ex1.png" style="width:85%">
@@ -202,9 +208,12 @@ Anguila, carp, catfish, the common roach, codfish and flounder.
 
 ## Dataset example: Belgian LifeWatch Observatory data
 
-<!-- 
-Collage different data
--->
+<a href="https://www.lifewatch.be/en/data">
+<img src="images/lw_observatory.png" style="width:85%">
+</a>
+
+Access in R with [lwdataexplorer](https://lifewatch.github.io/lwdataexplorer/index.html)
+
 
 ## Dataset example: Belgian LifeWatch Observatory data
 
@@ -239,34 +248,28 @@ class(zoo_sf)
 
 ```
 
-sf cheatsheet: https://raw.githubusercontent.com/rstudio/cheatsheets/main/sf.pdf
-
->[Coordinate Reference Systems (CRS)](https://docs.qgis.org/2.18/en/docs/gentle_gis_introduction/coordinate_reference_systems.html) provide a standardized way of describing locations.
+- `sf` [cheatsheet here](https://raw.githubusercontent.com/rstudio/cheatsheets/main/sf.pdf)
+- [Coordinate Reference Systems (CRS)](https://docs.qgis.org/2.18/en/docs/gentle_gis_introduction/coordinate_reference_systems.html): _provide a standardized way of describing locations_
 <br> 
 <small>https://www.nceas.ucsb.edu</small>
-<!-- <img src="images/crs.jpg" style="width:35%"> -->
-
-## Dataset example: Belgian LifeWatch Observatory data
-
-```{r lwdata3}
-plot(st_geometry(zoo_sf))
-```
-
 
 
 ## Dataset example: Belgian LifeWatch Observatory data
-<!-- 
-ETN tracking data picture
--->
+
+<a href="https://lifewatch.be/ETN/">
+<img src="images/etn.png" style="width:85%">
+</a>
+
 ```r
+# Access ETN with lwdataexplorer
 etn <- getEtnData()
 ```
 
-
 ## Taxonomic match with WoRMS
 
-<!-- Logo WoRMS and link -->
-<!-- Two species names, one accepted and another that is not, each has an ID -->
+<a href="https://www.marinespecies.org/index.php">
+<img src="images/worms0.png" style="width:85%">
+</a>
 
 ## Taxonomic match with WoRMS
 ```{r worrms1, results = 'hide'}
@@ -286,6 +289,8 @@ kbl(taxa[[1]]) %>%
   scroll_box(width = "100%", height = "200px")
 ```
 
+See the `worrms` R package [documentation here](https://docs.ropensci.org/worrms/)
+
 ## AphiaID: Unique identifier of a taxon in WoRMS
 
 ```
@@ -294,42 +299,31 @@ https://www.marinespecies.org/aphia.php?p=taxdetails&id=137205
 <img src="images/turtle.jpg" width="40%" height="auto">
 
 
-
-
 ## Geographic standard: Marine Regions Gazetteer
 
-<!-- Logo MR and link -->
-<!-- Two regions with same name -->
+<a href="https://marineregions.org/">
+<img src="images/MR_logo_text_all.png">
+</a>
 
 ## Geographic standard: Marine Regions Gazetteer
-
-```{r mregions2-1, eval = FALSE}
+```{r mregions2-1}
 library(mregions2)
 
-# Find all Long beaches
-mr_gaz_records_by_names("Long beach")
-
-# Get only one
-mr_gaz_record(32658)
+# Find all region names starting with "Belgian"
+belgian_gaz <- mr_gaz_records_by_names("Belgian")
+belgian_gaz
 ```
 
-```{r mregions2-1-1, echo = FALSE}
-# TODO: fix mregions2
-# library(kableExtra)
-# 
-# kbl(mr_gaz_record(32658)) %>%
-#   kable_paper() %>%
-#   scroll_box(width = "100%", height = "300px")
+
+## Geographic standard: Marine Regions Gazetteer
+
+```{r mregions2-2, eval = FALSE}
+# Get only Belgian Territorial Sea
+# FIX MR PACKAGE
+territorial_sea <- mr_gaz_record(49010)
+territorial_sea
 ```
 
-```{r mregions2-2, echo=FALSE}
-# lb1 <- mr_gaz_record(32658)
-# lb2 <- mr_gaz_record(57690)
-# 
-# lb <- rbind(lb1, lb2)
-# 
-# plot(lb)
-```
 
 ## MRGID: Unique identifier of a record of the [marineregions.org](https://marineregions.org/mrgid.php) Gazetteer
 
@@ -340,16 +334,37 @@ https://marineregions.org/gazetteer.php?p=details&id=3293
 
 ## Spatial filtering
 
-```{r mregions2-spfilter, eval=FALSE}
+We will perform an spatial intersection
+
+<img src="images/intersection_1.png" style="width:85%">
+
+## Spatial filtering
+
+We will perform an spatial intersection
+
+<img src="images/intersection_2.png" style="width:85%">
+
+## Spatial filtering
+
+We will perform an spatial intersection
+
+<img src="images/intersection_3.png" style="width:85%">
+
+
+## Spatial filtering
+
+```r
 library(sf)
-# bpns <- mr_gaz_record(32658)
 
-# mapview(list(zoo_sf, bpns))
+nrow(zoo_sf)
+#> [1] 437
 
-# st_intersection(zoo_sf, bpns)
+zoo_sf_belgium <- st_intersection(zoo_sf, territorial_sea)
+
+nrow(zoo_sf)
+#> [1] 36
 ```
 
-<!-- get drawing or whatever to show spatial filter -->
 
 ## Exercise 1: Standardize
 
@@ -359,6 +374,13 @@ library(sf)
 cat(c("```r", readLines("../exercises/01_standarize.R"),"```"), sep = "\n")
 ```
 
+
+
+<!----------------------------------------------->
+<!--                                           -->
+<!--             Begin Exercise 2              -->
+<!--                                           -->
+<!----------------------------------------------->
 
 # Exercise 2
 
@@ -417,6 +439,12 @@ cat(c("```r", readLines("../exercises/02_eurobis.R"),"```"), sep = "\n")
 
 
 
+<!----------------------------------------------->
+<!--                                           -->
+<!--             Begin Exercise 3              -->
+<!--                                           -->
+<!----------------------------------------------->
+
 # Exercise 3
 
 <img src="images/ex3.png" style="width:85%">
@@ -425,60 +453,87 @@ cat(c("```r", readLines("../exercises/02_eurobis.R"),"```"), sep = "\n")
 ## EMODnetWFS
 
 Explore and download geospatial data from EMODnet. 
-
-```{r emodnetwfs1, results='hide', message=FALSE}
+```{r emodnetwfs0, results='hide'}
 library(EMODnetWFS)
 
-client <- emodnet_init_wfs_client("human_activities")
-
-class(client)
-#> [1] "WFSClient"         "OWSClient"         "OGCAbstractObject" "R6"
+emodnet_wfs()
 ```
 
+```{r emodnetwfs0-1, echo=FALSE}
+kbl(emodnet_wfs()) %>%
+  kable_paper() %>%
+  scroll_box(width = "100%", height = "250px")
+```
 More info at https://emodnet.github.io/EMODnetWFS/
 
 ## EMODnetWFS
 
-```
-emodnet_get_wfs_info(client)
+```{r emodnetwfs1, results='hide', message=FALSE}
+# First create a WFS client
+client <- emodnet_init_wfs_client("seabed_habitats_general_datasets_and_products")
+
+class(client)
+#> [1] "WFSClient"         "OWSClient"         "OGCAbstractObject" "R6"
+
+# And ask for all the layers available
+info <- emodnet_get_wfs_info(client)
+info
 ```
 
-```{r emodnetwfs2-1, echo = FALSE}
-kbl(emodnet_get_wfs_info(client)[1:50,]) %>%
+```{r emodnetwfs1-1, echo=FALSE}
+kbl(info) %>%
   kable_paper() %>%
   scroll_box(width = "100%", height = "300px")
 ```
+
 
 ## EMODnetWFS
 
 ```{r emodnetwfs3, results='hide'}
-layer <- emodnet_get_layers(client, layers = "microalgae", 
+# Download sandbank layer
+emodnet_layer <- emodnet_get_layers(client, layers = "art17_hab_1110", 
                             crs = 4326, reduce_layers = TRUE)
-layer
+class(emodnet_layer)
+#> [1] "sf"         "data.frame"
+
+head(emodnet_layer)
 ```
 
-```{r emodnetwfs3-1, echo = FALSE}
-kbl(layer[1:20,]) %>%
+```{r emodnetwfs3-1, echo=FALSE}
+kbl(head(emodnet_layer)) %>%
   kable_paper() %>%
   scroll_box(width = "100%", height = "300px")
+```
+
+## EMODnetWFS: Download one layer
+
+```{r emodnetwfs3-2}
+# Some wrangling to plot
+emodnet_layer <- emodnet_layer %>% 
+  st_cast(to = "GEOMETRYCOLLECTION") %>% 
+  st_collection_extract(type = "POLYGON")
+
+mapview(emodnet_layer)
 ```
 
 
 ## Bio-Oracle
 
-We will use `sdmpredictors` to load raster layers with environmental data from present and future conditions.
+Marine data layers for ecological modelling
 
-More info https://bio-oracle.org/code.php or http://lifewatch.github.io/sdmpredictors/
+- `sdmpredictors` can download Bio-Oracle layers
+- More info at [bio-oracle.org](https://bio-oracle.org/index.php) or [sdmpredictors](http://lifewatch.github.io/sdmpredictors/)
 
 ```{r sdm1, results='hide'}
 library(sdmpredictors)
+library(raster)
 
 # Find all layers available from the latest version
 list_layers("Bio-ORACLE", version = 2.2)
 list_layers_future("Bio-ORACLE", version = 2.2)
 
 # Pass layer code for max sea surface temperature
-load_layers("BO22_tempmax_ss")
+load_layers("BO22_RCP26_2050_chlomean_ss")
 ```
 
 ## Bio-Oracle
@@ -505,7 +560,13 @@ kbl(list_layers_future("Bio-ORACLE", version = 2.2)) %>%
 
 ## Bio-Oracle
 ```{r sdm4}
-load_layers("BO22_tempmean_ss")
+bio_oracle <- load_layers("BO22_RCP26_2050_chlomean_ss")
+bio_oracle
+```
+
+## Bio-Oracle
+```{r sdm5}
+raster::plot(bio_oracle)
 ```
 
 
@@ -535,30 +596,39 @@ cat(c("```r", readLines("../exercises/03_environmental.R"),"```"), sep = "\n")
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<!----------------------------------------------->
+<!--                                           -->
+<!--             Begin Exercise 4              -->
+<!--                                           -->
+<!----------------------------------------------->
 
 
 # Exercise 4
 
 <img src="images/ex4.png" style="width:85%">
 
+## Spatial Join
 
-## Spatial join
+The points will get the values from the polygon
+
+<img src="images/sp_1.png" style="width:85%">
+
+More info: http://wiki.gis.com/wiki/index.php/Spatial_Join
+
+## Spatial Join
+
+The points will get the values from the polygon
+
+<img src="images/sp_2.png" style="width:85%">
+
+## Spatial Join
+
+The points will get the values from the polygon
+
+<img src="images/sp_3.png" style="width:85%">
+
+
+## Spatial Join
 
 Warning: same principle but works different!
 
@@ -566,16 +636,16 @@ Vector data
 ```r
 library(sf)
 
-st_join(df, vector_layer)
+st_join(df, emodnet_layer)
 ```
 
 Raster data
 ```r
 library(raster)
 
-df_as_sp <- as_Spatial(df)
+df_as_sp <- sf::as_Spatial(df)
 
-extract(raster_layer, df_as_sp)
+raster::extract(bio_oracle, df_as_sp)
 ```
 
 ## Exercise 4
@@ -589,7 +659,7 @@ cat(c("```r", readLines("../exercises/04_combine.R"),"```"), sep = "\n")
 <button style="width:26%">
   <img src="images/Salva.jpg">
   <br> **Salva Fernandez** <br/> VLIZ <br/>Science Officer<br/> salvador.fernandez@vliz.be
-</button>kableExtra::kable(df)
+</button>
 
 <button style="width:43%">
   <img src="images/Laura.png">
@@ -602,8 +672,8 @@ cat(c("```r", readLines("../exercises/04_combine.R"),"```"), sep = "\n")
 </button>
 
 <br><br>
-Or open an issue on GitHub! 
-https://github.com/vlizBE/ebr-2022-data-combine/issues
+[Or open an issue on GitHub!](https://github.com/vlizBE/ebr-2022-data-combine/issues)
+
 
 ```{r render, include = FALSE, eval = FALSE}
 rmarkdown::render("slides.Rmd", output_dir = "../../docs", output_file = "index.html")
