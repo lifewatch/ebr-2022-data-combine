@@ -5,14 +5,14 @@
 
 Exercises and slides to be used during the Workshop *Bringing together marine biodiversity, environmental and maritime boudnaries data in R* in the framework of the Empowering Biodiversity Research Conference II (EBRII). You can find practical information about the workshop and the EBRII conference [here](https://www.biodiversity.be/5147/).
 
-This is an hybrid workshop in which we will use zoom to meet online and the platform hackmd.io to share our solutions to each exercises.
+This is an hybrid workshop in which we will use zoom to meet online and the platform hackmd.io to share our solutions of the exercises.
 
 ## Set-up 🖥️ 
 
 * We will use [R v4.0](https://www.r-project.org/) or higher and [RStudio](https://www.rstudio.com/)
 * Download this repository and open the `ebr-2022-data-combine.Rproj` file with RStudio
 
-* This workshop uses  [`renv`](https://rstudio.github.io/renv/index.html) to ensure we use the same packages. Run this snippet on your RStudio session to fetch an isolated library with the dependencies we will use:
+* This workshop uses [`renv`](https://rstudio.github.io/renv/index.html) to ensure we have the same packages. Run this code on your RStudio session to fetch an isolated library with the packages we will use:
 
 ```r
 # install.packages("renv@0.15.4")
@@ -22,9 +22,9 @@ renv::restore()
 
 ## Get started 🚀
 
-Open the slides in this link: https://vlizbe.github.io/ebr-2022-data-combine
+The exercises are in the 📁 folder: `./src/exercises/`. These are R scripts where the exercises are explained with comments. We chose this format to promote the reuse of this code for your own purposes. You are welcome to apply the tools explained in this workshop to your data.
 
-The exercises are in the 📁 folder: `./src/exercises/`. These are plain R scripts where the exercises are explained with comments. We chose this format to promote the reuse of this code for your own purposes. You are welcome to apply the tools explained in this workshop to your data.
+Open the slides of the workshop in your web browser and keep them at hand. The slides are in this link: https://vlizbe.github.io/ebr-2022-data-combine
 
 🌟 **We will start now the workshop!** 🌟
 
@@ -55,4 +55,5 @@ ebr-2022-data-combine/
 
 ### Acknowledgements 🙏
 
-This workshop is inspired on the INBO Coding Club sessions. You can find more info here: https://inbo.github.io/coding-club/
+This workshop is inspired on the [INBO Coding Club sessions](https://inbo.github.io/coding-club/).
+
