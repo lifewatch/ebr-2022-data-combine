@@ -236,7 +236,7 @@ Anguila, carp, catfish, the common roach, codfish and flounder.
 ## House Rules
 
  - This is a collaborative workshop! 🙌 Let's share our solutions in [this google document](https://docs.google.com/document/d/1n2_0lDrOyFIqapo85NA_0cH2qJPDE1P2HOlTw5ANYK8/edit?usp=sharing)
- - These slides are available online [in this link](https://vlizbe.github.io/ebr-2022-data-combine)
+ - These slides are available online [in this link](https://lifewatch.github.io/ebr-2022-data-combine)
  - You can ask questions online via Q&A, or shout if you are in Brussels 📣
  - Make sure you are using `renv`.
  - Use the RStudio projects!
