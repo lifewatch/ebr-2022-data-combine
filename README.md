@@ -5,34 +5,32 @@
 
 Exercises and slides to be used during the Workshop *Bringing together marine biodiversity, environmental and maritime boudnaries data in R* in the framework of the Empowering Biodiversity Research Conference II (EBRII). You can find practical information about the workshop and the EBRII conference [here](https://www.biodiversity.be/5147/).
 
+This is an hybrid workshop in which we will use zoom to meet online and the platform hackmd.io to share our solutions to each exercises.
+
 ## Set-up 🖥️ 
 
 * We will use [R v4.0](https://www.r-project.org/) or higher and [RStudio](https://www.rstudio.com/)
-* Download this repository and open the `.Rproj` file with RStudio
+* Download this repository and open the `ebr-2022-data-combine.Rproj` file with RStudio
 
 * This workshop uses  [`renv`](https://rstudio.github.io/renv/index.html) to ensure we use the same packages. Run this snippet on your RStudio session to fetch an isolated library with the dependencies we will use:
 
 ```r
 # install.packages("renv@0.15.4")
 renv::load()
+renv::restore()
 ```
-
-
 
 ## Get started 🚀
 
 Open the slides in this link: https://vlizbe.github.io/ebr-2022-data-combine
 
-The exercises are in: `./src/exercises/`. These are plain R scripts where the exercises are explained with comments. We chose this format to promote the reuse of this code for your own purposes. You are welcome to apply the tools explained in this workshop to your data.
+The exercises are in the 📁 folder: `./src/exercises/`. These are plain R scripts where the exercises are explained with comments. We chose this format to promote the reuse of this code for your own purposes. You are welcome to apply the tools explained in this workshop to your data.
 
-This is an hybrid workshop in which we will use zoom to meet online and hackmd.io to share our solutions to each exercises:
+🌟 **We will start now the workshop!** 🌟
 
-* Zoom: https://us06web.zoom.us/j/84158030131
-* Hackmd.io: hackmd.io/@fw0N_GjzTbeK4x4_tgcJLg/B1yOPbWD9
+## Extra Information
 
-
-
-## Directory structure 📁 
+### Directory structure 📁 
 
 ```
 ebr-2022-data-combine/
@@ -55,7 +53,6 @@ ebr-2022-data-combine/
 * `renv.lock` this file is used by `renv` to record the dependencies used by the project
 
 
-
-## Acknowledgements 🙏
+### Acknowledgements 🙏
 
 This workshop is inspired on the INBO Coding Club sessions. You can find more info here: https://inbo.github.io/coding-club/
