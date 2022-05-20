@@ -235,14 +235,20 @@ Anguila, carp, catfish, the common roach, codfish and flounder.
 
 ## House Rules
 
- - Open the slides https://vlizbe.github.io/ebr-2022-data-combine
- - Open your RStudio project 
- - Make sure your environment (renv) is set up beforehand (link to tutorial)
- - Let's code!
- - You can share your code (hackmd.io/@fw0N_GjzTbeK4x4_tgcJLg/B1yOPbWD9) or discuss with others in the breakout room
- - Revision of each exercise
- - Any question you can drop it in the chat 
+ - This is a collaborative workshop! 🙌 Let's share our solutions in [this google document](https://docs.google.com/document/d/1n2_0lDrOyFIqapo85NA_0cH2qJPDE1P2HOlTw5ANYK8/edit?usp=sharing)
+ - These slides are available online [in this link](https://vlizbe.github.io/ebr-2022-data-combine)
+ - You can ask questions online via Q&A, or shout if you are in Brussels 📣
+ - Make sure you are using `renv`.
+ - Use the RStudio projects!
 
+<!-- ```{r meme_getwd, echo = FALSE} -->
+<!-- library(memer) -->
+<!-- meme_get("HotlineDrake") %>% -->
+<!--   meme_text_drake("setwd()", ".Rproj") -->
+
+<!-- ``` -->
+
+<img src="images/hotlinedrake.png" style="width:45%">
 
 <!----------------------------------------------->
 <!--                                           -->
@@ -468,7 +474,7 @@ cat(c("```r", readLines("../exercises/01_standarize.R"),"```"), sep = "\n")
 
 
 ## EurOBIS
-Example: get all occurrences of the Atlantic Cod (_Gadus morhua_; aphiaID = 126436) in the Belgian Part of the North Sea (MRGID = 3293)
+Example: get all occurrences of the Atlantic Cod (_Gadus morhua_; aphiaID = [126436](https://marinespecies.org/aphia.php?p=taxdetails&id=126436)) in the Belgian Part of the North Sea (MRGID = [3293](https://marineregions.org/mrgid/3293)
 
 ```{r eurobis1, results='hide'}
 library(eurobis)
@@ -523,33 +529,6 @@ cat(c("```r", readLines("../exercises/02_eurobis.R"),"```"), sep = "\n")
 <!--             Begin Exercise 3              -->
 <!--                                           -->
 <!----------------------------------------------->
-
-# Exercise 3
-
-<img src="images/ex3.png" style="width:85%">
-
-## Raster vs Vector Data
-<br>
-<br>
-<br>
-
-<button style="width:40%">
-  <img src="images/raster.png">
-  <br> **raster layer**
-</button>
-
-# Exercise 2
-
-<img src="images/ex2.png" style="width:100%">
-
-<!-- ## Dplyr -->
-
-<!--  - works with pipes (`%>%`) to increase code readability and avoid nesting -->
-<!--  - `mean(as.numeric(df$temp))` translates to `df$temp %>% as.numeric() %>% mean()` -->
-<!--  - cheatsheet [here](https://nyu-cdsc.github.io/learningr/assets/data-transformation.pdf) -->
-
-<!-- <img src="images/dplyr.png" style="width:70%">  -->
-
 
 # Exercise 3
 
@@ -712,10 +691,17 @@ raster::plot(bio_oracle)
 cat(c("```r", readLines("../exercises/03_environmental.R"),"```"), sep = "\n")
 ```
 
-# 15 min. Break!
+# Survey time!
+
+We would love to hear from you! <br/>
+Please fill out [this questionnaire!](https://docs.google.com/forms/d/1YUC01T3boQ2RNrsGwmuwCDzSCR5GPiZHn-tvOM60_04/edit) 📝, it will only take a couple minutes.
+
 
 <br/>
-<img src="images/break.png" style="width:40%">
+<img src="images/break.png" style="width:30%">
+<br/>
+15m. break
+
 
 
 <!----------------------------------------------->
@@ -782,9 +768,6 @@ cat(c("```r", readLines("../exercises/04_combine.R"),"```"), sep = "\n")
 
 # Questions? Contact us!
 
-Let us know your thoughts!
-https://docs.google.com/forms/d/1YUC01T3boQ2RNrsGwmuwCDzSCR5GPiZHn-tvOM60_04/edit
-
 <button style="width:26%">
   <img src="images/Salva.jpg">
   <br> <div style="font-size:30px">Salva Fernandez</div> <br/> <div style="font-size:25px">VLIZ <br/>Science Officer</div><br/><div style="font-size:20px"> salvador.fernandez@vliz.be</div>
@@ -802,6 +785,8 @@ https://docs.google.com/forms/d/1YUC01T3boQ2RNrsGwmuwCDzSCR5GPiZHn-tvOM60_04/edi
 
 <br><br>
 [Or open an issue on GitHub!](https://github.com/vlizBE/ebr-2022-data-combine/issues)
+
+and don't forget to [fill out our survey](https://docs.google.com/forms/d/1YUC01T3boQ2RNrsGwmuwCDzSCR5GPiZHn-tvOM60_04/edit) 📝
 
 
 ```{r render, include = FALSE, eval = FALSE}
