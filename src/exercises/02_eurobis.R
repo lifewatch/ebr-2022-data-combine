@@ -3,6 +3,7 @@ library(eurobis)
 
 # Helper library
 library(dplyr)
+library(tidyr)
 
 #---------------------------------------------------------------------------------------------
 # Exercise 2.1.: 
@@ -10,15 +11,7 @@ library(dplyr)
 #
 # Hint: more info with ?eurobis_occurrences_basic()
 #---------------------------------------------------------------------------------------------
-mrgid = 3293
-list_aphia = unique(etn$valid_AphiaID)
 
-basic <- eurobis_occurrences_basic(
-  mrgid = mrgid,
-  aphiaid = species_matched$AphiaID,
-  start_date = "2015-01-01",
-  end_date = "2016-01-01"
-)
 
 #---------------------------------------------------------------------------------------------
 # Exercise 2.2.: 
@@ -28,25 +21,15 @@ basic <- eurobis_occurrences_basic(
 #  - Find data for the species of your interest by passing a scientific name.
 #  - Find data for the functional group of your interest.
 #---------------------------------------------------------------------------------------------
-my_polygon <- eurobis_map_draw()
-
-eurobis_map_regions_ecoregions()
-eurobis_map_regions_eez()
-eurobis_map_regions_iho()
-eurobis_map_regions_eez_iho()
-eurobis_map_regions_reportingareas()
-
-basic <- eurobis_occurrences_basic(
-  geometry = my_polygon,
-  mrgid = c(2350),
-  functional_groups = c("birds", "mammals")
-)
 
 
 #---------------------------------------------------------------------------------------------
 # Exercise 2.3.:
 #   - Wrangle the ETN dataset to fit the column names of eurobis.
-#   - Get only unique combinations of values
+#   - Select the following columns: datecollected, decimallongitude, decimallatitude, 
+#     scientificname, aphiaid
+#   - As we are not considering the individual fishes tracked but only presences, there will be 
+#     duplicates. Get unique combination of values
 #   - Bind the rows of both datasets
 #
 # Hint: the aphiaID from EurOBIS comes with a full URL. Use `gsub()` or `stringr::str_replace()` 
@@ -54,62 +37,18 @@ basic <- eurobis_occurrences_basic(
 # Hint: we recommend to use `dplyr::transmute()`, `unique.data.frame()` and `dplyr::bind_rows()`
 # Hint: EurOBIS follows the Darwin Core standard for naming the columns: https://dwc.tdwg.org/terms/
 #---------------------------------------------------------------------------------------------
-colnames(etn)
-colnames(basic)
-
-basic <- basic %>% select(-gml_id, -id, -datasetid, -coordinateuncertaintyinmeters
-             ) %>% mutate(datecollected = as.character(datecollected),
-                          aphiaid = gsub("http://marinespecies.org/aphia.php?p=taxdetails&id=", "", aphiaid, fixed = TRUE)
-             ) %>% mutate(aphiaid = as.integer(aphiaid))
-
-df <- etn %>% 
-  transmute(
-    datecollected = time,
-    decimallongitude = longitude,
-    decimallatitude = latitude,
-    scientificname = scientific_name, 
-    aphiaid = AphiaID,
-    scientificnameaccepted = valid_name
-  ) %>% arrange(
-    scientificname, datecollected
-  ) %>%
-  unique.data.frame(
-  ) %>% 
-  bind_rows(basic)
 
 
 #---------------------------------------------------------------------------------------------
 # Bonus Exercise 2.4.: 
 #  - Repeat the query adding all the information available in EurOBIS
-#  - Get all the distinct values of the parameters_* coumns
-#  - Filter only records with count of individuals
+#  - Get all the distinct values of the parameters_* columns
+#  - Pivot the table to turn the values of "parameter" into columns, with the "parameter_values"
+#    as values. Select only a few columns and use `distinct()`
 #
 # Hint: use `eurobis_occurrences_full_and_parameters()`
+# Hint: use `st_drop_geometry()` to simplify
+# Hint: pivot with: `tidyr::pivot_wider()` and the arguments `names_from` and `values_from`
 # Hint: more information here: https://www.emodnet-biology.eu/emodnet-data-format
 #---------------------------------------------------------------------------------------------
-full_emof <- eurobis_occurrences_full_and_parameters(
-  mrgid = mrgid,
-  aphiaid = species_matched$AphiaID,
-  start_date = "2015-01-01",
-  end_date = "2016-01-01"
-)
-
-# View all parameters available
-full_emof %>% 
-  st_drop_geometry() %>%
-  select(parameter, 
-         parameter_bodcterm, 
-         parameter_bodcterm_definition,
-         parameter_measurementtypeid) %>%
-  distinct() %>% 
-  View()
-
-
-# Query only Counts
-full_emof <- full_emof %>%
-  filter(parameter_measurementtypeid == "http://vocab.nerc.ac.uk/collection/P01/current/OCOUNT01/")
-
-
-
-
 

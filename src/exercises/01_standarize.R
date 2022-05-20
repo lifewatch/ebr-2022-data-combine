@@ -12,22 +12,10 @@ library(sf)
 
 #---------------------------------------------------------------------------------------------
 # Exercise 1.1.: 
-# - Get fish data from the European Tracking Network of the year 2021
-# - Remove white spaces in the species names
+# - Get fish tracking data from the European Tracking Network of the year 2015
 #
 # Hint: use `?getEtnData()` to find more information
 #---------------------------------------------------------------------------------------------
-etn <- getEtnData(
-  startdate = "2015-01-01",
-  stopdate = "2016-01-01",
-  action = "Time bins",
-  by = "1 day",
-  networks = "All",
-  projects = "All"
-)
-
-# Inspect
-View(etn)
 
 
 #---------------------------------------------------------------------------------------------
@@ -40,19 +28,6 @@ View(etn)
 # Hint: worrms functions start all like `wm_*`
 # Hint: use `do.call(rbind, my_data_frame)` to turn a list into a data frame
 #---------------------------------------------------------------------------------------------
-
-# Unique list of species
-species_list <- unique(etn$scientific_name)
-
-# Taxon match
-species_matched <- wm_records_taxamatch(species_list)
-species_matched <- do.call(rbind, species_matched)
-
-# Left join
-etn <- merge(etn, species_matched, by.x = "scientific_name", by.y = "scientificname")
-
-# Inspect
-View(etn)
 
 
 #---------------------------------------------------------------------------------------------
@@ -67,24 +42,6 @@ View(etn)
 # For example: `st_intersection()`
 #---------------------------------------------------------------------------------------------
 
-# Find the North Sea
-mr_belgian <- mr_gaz_records_by_names("Belgian")
-View(mr_belgian)
-
-bpns <- mr_gaz_record(3293)
-
-# Transform data frame into simple feature object
-etn <- st_as_sf(etn, coords = c("longitude", "latitude"), crs = 4326, remove = FALSE)
-
-# Inspect both
-mapview(list(etn, bpns))
-
-# Perform the intersection
-etn <- st_intersection(etn, bpns)
-
-# Inspect again
-mapview(list(etn, bpns))
-
 
 #---------------------------------------------------------------------------------------------
 # Bonus Exercise 1.4.: 
@@ -92,9 +49,3 @@ mapview(list(etn, bpns))
 #
 #---------------------------------------------------------------------------------------------
 
-# To turn into a data.frame again
-st_drop_geometry(etn)
-
-# Save as shapefile or csv
-st_write(etn, "./data/etn.shp")
-write.csv(st_drop_geometry(etn), "./data/etn.csv")

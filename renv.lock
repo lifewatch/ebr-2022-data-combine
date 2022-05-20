@@ -1251,8 +1251,8 @@
       "RemoteRepo": "mregions2",
       "RemoteUsername": "lifewatch",
       "RemoteRef": "HEAD",
-      "RemoteSha": "286305ef0a0936c5e6f075477a2ce6cb927981e9",
-      "Hash": "58e4b959bdbb888ce60294e2dd93e9dd",
+      "RemoteSha": "e2d958affdc78c79cc30c5f4afa00d51be9deb6c",
+      "Hash": "95cc982481eefa4d8c2f1b29582f6694",
       "Requirements": [
         "checkmate",
         "glue",
@@ -1306,8 +1306,8 @@
       "RemoteRepo": "ows4R",
       "RemoteUsername": "eblondel",
       "RemoteRef": "HEAD",
-      "RemoteSha": "8d80b530a381c263c86667479eb9e08148fe1f92",
-      "Hash": "8835a595466079a6215fed19617bb58b",
+      "RemoteSha": "f99aa5abab21985da9d64dcf303e69cca98e5629",
+      "Hash": "83c35587f9a35ddab7478031b9929b4c",
       "Requirements": [
         "R6",
         "XML",
@@ -1538,16 +1538,6 @@
       "Repository": "CRAN",
       "Hash": "c1078316e1d4f70275fc1ea60c0bc431",
       "Requirements": []
-    },
-    "revealjs": {
-      "Package": "revealjs",
-      "Version": "0.9",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Hash": "08e30caa337e6d335d83df1a05d5b9f3",
-      "Requirements": [
-        "rmarkdown"
-      ]
     },
     "rgdal": {
       "Package": "rgdal",
