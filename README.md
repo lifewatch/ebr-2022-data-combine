@@ -24,7 +24,7 @@ renv::restore()
 
 The exercises are in the 📁 folder: `./src/exercises/`. These are R scripts where the exercises are explained with comments. We chose this format to promote the reuse of this code for your own purposes. You are welcome to apply the tools explained in this workshop to your data.
 
-Open the slides of the workshop in your web browser and keep them at hand. The slides are in this link: https://vlizbe.github.io/ebr-2022-data-combine
+Open the slides of the workshop in your web browser and keep them at hand. The slides are in this link: https://lifewatch.github.io/ebr-2022-data-combine
 
 🌟 **We will start now the workshop!** 🌟
 
