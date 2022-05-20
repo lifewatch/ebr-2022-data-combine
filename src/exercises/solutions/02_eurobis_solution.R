@@ -11,7 +11,14 @@ library(tidyr)
 #
 # Hint: more info with ?eurobis_occurrences_basic()
 #---------------------------------------------------------------------------------------------
+list_aphia = unique(etn$valid_AphiaID)
 
+basic <- eurobis_occurrences_basic(
+  mrgid = 3293,
+  aphiaid = list_aphia,
+  start_date = "2015-01-01",
+  end_date = "2016-01-01"
+)
 
 #---------------------------------------------------------------------------------------------
 # Exercise 2.2.: 
@@ -21,6 +28,19 @@ library(tidyr)
 #  - Find data for the species of your interest by passing a scientific name.
 #  - Find data for the functional group of your interest.
 #---------------------------------------------------------------------------------------------
+my_polygon <- eurobis_map_draw()
+
+eurobis_map_regions_ecoregions()
+eurobis_map_regions_eez()
+eurobis_map_regions_iho()
+eurobis_map_regions_eez_iho()
+eurobis_map_regions_reportingareas()
+
+basic <- eurobis_occurrences_basic(
+  geometry = my_polygon,
+  mrgid = c(2350),
+  functional_groups = c("birds", "mammals")
+)
 
 
 #---------------------------------------------------------------------------------------------
@@ -37,6 +57,27 @@ library(tidyr)
 # Hint: we recommend to use `dplyr::transmute()`, `unique.data.frame()` and `dplyr::bind_rows()`
 # Hint: EurOBIS follows the Darwin Core standard for naming the columns: https://dwc.tdwg.org/terms/
 #---------------------------------------------------------------------------------------------
+colnames(etn)
+colnames(basic)
+
+basic <- basic %>% select(datecollected, decimallongitude, decimallatitude, scientificname, aphiaid
+             ) %>% mutate(datecollected = as.character(datecollected),
+                          aphiaid = gsub("http://marinespecies.org/aphia.php?p=taxdetails&id=", "", aphiaid, fixed = TRUE)
+             ) %>% mutate(aphiaid = as.integer(aphiaid))
+
+df <- etn %>% 
+  transmute(
+    datecollected = time,
+    decimallongitude = longitude,
+    decimallatitude = latitude,
+    scientificname = scientific_name, 
+    aphiaid = AphiaID
+  ) %>% arrange(
+    scientificname, datecollected
+  ) %>%
+  unique.data.frame(
+  ) %>% 
+  bind_rows(basic)
 
 
 #---------------------------------------------------------------------------------------------
@@ -51,4 +92,34 @@ library(tidyr)
 # Hint: pivot with: `tidyr::pivot_wider()` and the arguments `names_from` and `values_from`
 # Hint: more information here: https://www.emodnet-biology.eu/emodnet-data-format
 #---------------------------------------------------------------------------------------------
+
+# Download all the info available in EurOBIS
+full_emof <- eurobis_occurrences_full_and_parameters(
+  mrgid = 3293,
+  aphiaid = list_aphia,
+  start_date = "2015-01-01",
+  end_date = "2016-01-01"
+)
+
+# View all parameters available
+full_emof %>% 
+  st_drop_geometry() %>%
+  select(parameter, 
+         parameter_bodcterm, 
+         parameter_bodcterm_definition,
+         parameter_measurementtypeid) %>%
+  distinct() %>% 
+  View()
+
+# Pivot parameter into columns
+full_emof %>% 
+  st_drop_geometry() %>%
+  select(scientificname, datecollected, decimallongitude, decimallatitude, parameter, parameter_value) %>%
+  pivot_wider(names_from = parameter, values_from = parameter_value) %>%
+  distinct() %>%
+  View()
+
+
+
+
 

@@ -17,6 +17,28 @@ library(sf)
 #
 #---------------------------------------------------------------------------------------------
 
+# Check services available
+emodnet_wfs()
+
+# Start client seabed habitats and check layers available
+seabed_client <- emodnet_init_wfs_client("seabed_habitats_general_datasets_and_products")
+
+seabed_info <- emodnet_get_wfs_info(seabed_client)
+View(seabed_info)
+
+# Get layer reefs
+seabed_layers <- emodnet_get_layers(
+  wfs = seabed_client, 
+  layers = "art17_hab_1170",
+  reduce_layers = TRUE,
+  crs = 4326
+) %>% 
+  st_cast(to = "GEOMETRYCOLLECTION") %>% 
+  st_collection_extract(type = "POLYGON")
+
+# Inspect
+mapview(list(df, seabed_layers))
+
 
 #---------------------------------------------------------------------------------------------
 # Exercise 3.2.: 
@@ -28,4 +50,28 @@ library(sf)
 #       only at the latest version (2.2)
 # Hint: layers are loaded by providing the layer code
 #---------------------------------------------------------------------------------------------
+
+# See all present layers available
+list_layers <- list_layers("Bio-ORACLE", version = 2.2)
+View(list_layers)
+
+# Repeat for future layers
+list_layers_future <- list_layers_future("Bio-ORACLE", version = 2.2)
+View(list_layers_future)
+
+# Get the codes of the layers
+layer_codes <- c(
+  "BO22_tempmean_ss", 
+  "BO22_RCP85_2050_tempmean_ss",
+  "BO22_RCP85_2100_tempmean_ss"
+)
+
+# Load the layers
+layers <- load_layers(layer_codes, rasterstack = TRUE, datadir = "./data/")
+
+# Inspect
+mapview(layers)
+
+# Inspect
+mapview(list(df, layers$BO22_tempmean_ss))
 
