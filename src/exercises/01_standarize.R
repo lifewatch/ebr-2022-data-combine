@@ -2,6 +2,8 @@
 library(lwdataexplorer)
 library(worrms)
 library(mregions2)
+# devtools::install_github("lifewatch/mregions2")
+# devtools::install_github("lifewatch/lwdataexplorer")
 
 ## Helper libraries
 library(mapview)
