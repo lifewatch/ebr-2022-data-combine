@@ -236,7 +236,7 @@ Anguila, carp, catfish, the common roach, codfish and flounder.
 ## House Rules
 
  - This is a collaborative workshop! 🙌 Let's share our solutions in [this google document](https://docs.google.com/document/d/1n2_0lDrOyFIqapo85NA_0cH2qJPDE1P2HOlTw5ANYK8/edit?usp=sharing)
- - These slides are available online [in this link](https://lifewatch.github.io/ebr-2022-data-combine)
+ - These slides are available online at  [lifewatch.github.io/ebr-2022-data-combine](https://lifewatch.github.io/ebr-2022-data-combine)
  - You can ask questions online via Q&A, or shout if you are in Brussels 📣
  - Make sure you are using `renv`.
  - Use the RStudio projects!
@@ -256,13 +256,20 @@ Anguila, carp, catfish, the common roach, codfish and flounder.
 <!--                                           -->
 <!----------------------------------------------->
 
-# Exercise 1: standardize
+# Exercise 1
 
 <img src="images/ex1.png" style="width:85%">
 
 <!-- Speaker Note: Introduce ETN -->
 
 **Use your own data!**
+
+## Exercise 1
+
+</br>
+<img src="images/standards.png">
+</br>
+<small>Source: https://xkcd.com/927/</small>
 
 ## Dataset example: Belgian LifeWatch Observatory data
 
@@ -443,7 +450,7 @@ mapview(list(zoo_sf, territorial_sea))
 mapview(list(zoo_sf_belgium, territorial_sea))
 ```
 
-## Exercise 1: Standardize
+## Exercise 1
 
 `./src/exercises/01_standardize.R`
 
