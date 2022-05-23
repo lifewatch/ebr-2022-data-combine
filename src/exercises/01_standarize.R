@@ -49,3 +49,8 @@ library(sf)
 #
 #---------------------------------------------------------------------------------------------
 
+
+
+
+# You can load this to continue with the workshop if something went wrong:
+# readRDS("./save/01_etn.rds")

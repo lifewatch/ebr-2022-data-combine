@@ -120,6 +120,6 @@ full_emof %>%
   View()
 
 
-
-
-
+# Save
+saveRDS(basic, "./save/02_basic.rds")
+saveRDS(df, "./save/02_df.rds")

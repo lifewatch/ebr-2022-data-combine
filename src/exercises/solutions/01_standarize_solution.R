@@ -95,3 +95,7 @@ st_drop_geometry(etn)
 # Save as shapefile or csv
 st_write(etn, "./data/etn.shp")
 write.csv(st_drop_geometry(etn), "./data/etn.csv")
+
+# Save
+saveRDS(etn, "./save/01_etn.rds")
+

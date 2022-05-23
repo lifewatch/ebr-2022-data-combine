@@ -75,3 +75,9 @@ mapview(layers)
 # Inspect
 mapview(list(df, layers$BO22_tempmean_ss))
 
+
+# Save 
+saveRDS(seabed_layers, "./save/03_seabed_layers.rds")
+saveRDS(layers, "./save/03_layers.rds")
+
+

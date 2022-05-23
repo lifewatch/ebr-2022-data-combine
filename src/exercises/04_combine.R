@@ -25,3 +25,9 @@ library(sf)
 #   - This is the end of the workshop. Feel free to try things on this curated dataset!
 #
 #---------------------------------------------------------------------------------------------
+
+
+
+
+# You can load this to continue with the workshop if something went wrong:
+# readRDS("./save/04_df.rds")

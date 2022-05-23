@@ -9,7 +9,7 @@ library(sf)
 # Hint: use the `sf` package to perform the join and `dplyr` to select only the 
 #      `habitat_description` column
 #---------------------------------------------------------------------------------------------
-seabed_layers <- seabed_layers %>% select(habitat_description, geom)
+seabed_layers <- seabed_layers %>% dplyr::select(habitat_description)
 
 df <- st_join(df, seabed_layers)
 
@@ -31,3 +31,6 @@ View(st_drop_geometry(df))
 #   - This is the end of the workshop. Feel free to try things on this curated dataset!
 #
 #---------------------------------------------------------------------------------------------
+
+# Save
+saveRDS(df, "./save/04_df.rds")

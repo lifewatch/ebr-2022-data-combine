@@ -52,3 +52,9 @@ library(tidyr)
 # Hint: more information here: https://www.emodnet-biology.eu/emodnet-data-format
 #---------------------------------------------------------------------------------------------
 
+
+
+
+# You can load this to continue with the workshop if something went wrong:
+# readRDS("./save/02_basic.rds")
+# readRDS("./save/02_df.rds")

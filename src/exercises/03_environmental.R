@@ -29,3 +29,9 @@ library(sf)
 # Hint: layers are loaded by providing the layer code
 #---------------------------------------------------------------------------------------------
 
+
+
+
+# You can load this to continue with the workshop if something went wrong:
+# readRDS("./save/03_seabed_layers.rds")
+# readRDS("./save/03_layers.rds")
