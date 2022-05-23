@@ -411,7 +411,7 @@ https://marineregions.org/gazetteer.php?p=details&id=3293
 
 ## Spatial filtering
 
-We will perform an spatial intersection
+We will perform a spatial intersection
 
 <img src="images/intersection_1.png" style="width:85%">
 
@@ -481,7 +481,7 @@ cat(c("```r", readLines("../exercises/01_standarize.R"),"```"), sep = "\n")
 
 
 ## EurOBIS
-Example: get all occurrences of the Atlantic Cod (_Gadus morhua_; aphiaID = [126436](https://marinespecies.org/aphia.php?p=taxdetails&id=126436)) in the Belgian Part of the North Sea (MRGID = [3293](https://marineregions.org/mrgid/3293)
+Example: get all occurrences of the Atlantic Cod (_Gadus morhua_; aphiaID = [126436](https://marinespecies.org/aphia.php?p=taxdetails&id=126436)) in the Belgian Part of the North Sea (MRGID = [3293](https://marineregions.org/mrgid/3293))
 
 ```{r eurobis1, results='hide'}
 library(eurobis)
@@ -518,7 +518,7 @@ df <- df %>%
   mutate(datecollected = as.Date(datecollected))
 ```
 
-- `sf` [cheatsheet here](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-transformation.pdf)
+- `dplyr` [cheatsheet here](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-transformation.pdf)
 
 
 ## Exercise 2
