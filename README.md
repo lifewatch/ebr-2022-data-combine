@@ -9,7 +9,8 @@ This is an hybrid workshop in which we will use zoom to meet online and the plat
 
 ## Set-up 🖥️ 
 
-* We will use [R v4.0](https://www.r-project.org/) or higher and [RStudio](https://www.rstudio.com/)
+* We will use [R v4.0](https://www.r-project.org/) or higher and [RStudio](https://www.rstudio.com/). This workshop has been tested using the latest R, RStudio and package versions available at the moment (2022-05-23).
+
 * Download this repository and open the `ebr-2022-data-combine.Rproj` file with RStudio
 
 * This workshop uses [`renv`](https://rstudio.github.io/renv/index.html) to ensure we have the same packages. Run this code on your RStudio session to fetch an isolated library with the packages we will use:
