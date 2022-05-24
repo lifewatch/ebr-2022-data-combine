@@ -92,8 +92,9 @@ mapview(list(etn, bpns))
 # To turn into a data.frame again
 st_drop_geometry(etn)
 
-# Save as shapefile or csv
-st_write(etn, "./data/etn.shp")
+# Save as geopackage or csv
+# more info at https://inbo.github.io/tutorials/tutorials/spatial_standards_vector/
+st_write(etn, "./data/etn.gpkg")
 write.csv(st_drop_geometry(etn), "./data/etn.csv")
 
 # Save
