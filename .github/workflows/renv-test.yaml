@@ -7,7 +7,7 @@ on:
   schedule:
     - cron:  '0 0 * * *'
 
-name: renv-test
+name: renv-check
 
 jobs:
   renv-test:
@@ -21,6 +21,8 @@ jobs:
         run: sudo apt-get install libcurl4-openssl-dev
       - name: Install libudunits2
         run: sudo apt-get install libudunits2-dev
+      - name: Install gdal
+        run: sudo apt-get install libgdal-dev
       - name: Install renv latest
         run: Rscript -e "install.packages('renv', type = 'source')"
       - name: Check
