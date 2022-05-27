@@ -10,7 +10,7 @@ on:
 name: renv-check
 
 jobs:
-  renv-test:
+  renv-check:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
@@ -23,7 +23,9 @@ jobs:
         run: sudo apt-get install libudunits2-dev
       - name: Install gdal
         run: sudo apt install libgdal-dev
+      - name: Install sodium
+        run: sudo apt install libsodium-dev
       - name: Install renv latest
         run: Rscript -e "install.packages('renv', type = 'source')"
-      - name: Check
+      - name: Fetch dependencies with renv
         run: Rscript -e "renv::restore()"
