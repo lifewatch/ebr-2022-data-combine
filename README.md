@@ -1,7 +1,7 @@
 
 # Bringing together marine biodiversity, environmental and maritime boundaries data in R 
 
-[![Funding](https://img.shields.io/static/v1?label=powered+by&message=lifewatch.be&labelColor=1a4e8a&color=f15922)](http://lifewatch.be)
+[![Funding](https://img.shields.io/static/v1?label=powered+by&message=lifewatch.be&labelColor=1a4e8a&color=f15922)](http://lifewatch.be) [![renv check](https://github.com/lifewatch/ebr-2022-data-combine/workflows/renv-check/badge.svg)](https://github.com/lifewatch/ebr-2022-data-combine/actions)
 
 Exercises and slides to be used during the Workshop *Bringing together marine biodiversity, environmental and maritime boudnaries data in R* in the framework of the Empowering Biodiversity Research Conference II (EBRII). You can find practical information about the workshop and the EBRII conference [here](https://www.biodiversity.be/5147/).
 

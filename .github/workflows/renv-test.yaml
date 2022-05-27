@@ -22,7 +22,7 @@ jobs:
       - name: Install libudunits2
         run: sudo apt-get install libudunits2-dev
       - name: Install gdal
-        run: sudo apt-get install libgdal-dev
+        run: sudo apt install libgdal-dev
       - name: Install renv latest
         run: Rscript -e "install.packages('renv', type = 'source')"
       - name: Check
