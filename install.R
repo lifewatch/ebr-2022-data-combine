@@ -1,5 +1,6 @@
-# install.packages("renv")
-# renv::init()
+install.packages("devtools")
+install.packages("renv")
+renv::restore()
 # install.packages("mapview")
 # install.packages("sf")
 # install.packages("worrms")
