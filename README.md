@@ -17,7 +17,6 @@ This is an hybrid workshop in which we will use zoom to meet online and the plat
 
 ```r
 # install.packages("renv@0.15.4")
-renv::load()
 renv::restore()
 ```
 
@@ -27,7 +26,7 @@ The exercises are in the 📁 folder: `./src/exercises/`. These are R scripts w
 
 Open the slides of the workshop in your web browser and keep them at hand. The slides are in this link: https://lifewatch.github.io/ebr-2022-data-combine
 
-🌟 **We will start now the workshop!** 🌟
+🌟 **Now we can start the workshop!** 🌟
 
 ## Extra Information
 
@@ -35,23 +34,22 @@ Open the slides of the workshop in your web browser and keep them at hand. The s
 
 ```
 ebr-2022-data-combine/
-├── data/
-├── docs/
-└── src/
-	├── exercises/
-	└── slides/
+├── data/ - directory to save data and read local files from
+├── docs/ - contains the slides and the infrastructure to deploy them online
+├── save/ - it has a few data files in .rds with the results of the exercises
+└── src/  - and the slides
+	├── exercises/ - scripts with the exercises that will be used during the workshop
+		└── solutions/ - scripts with the exercises already solved
+	└── slides/ - RMarkdown that renders the slides into html and save in docs/
 ├── .Rprofile
 ├── .gitignore
+├── Dockerfile - requirement to open the project on binder, uses rocker/binder image
+├── install.R - scripts to be run by binder to set up the dependencies of the project
 ├── README.md
-├── ebr-2022-data-combine.Rproj
-└── renv.lock 
+├── ebr-2022-data-combine.Rproj - open this file to start the project
+└── renv.lock - this file is used by renv to record the dependencies used by the project
 ```
 
-* `data` directory to save data and read local files from
-* `docs` contains the slides and the infrastructure to deploy them online
-* `src` scripts with the exercises that will be used during the workshop and the slides
-* `ebr-2022-data-combine.Rproj` open this file to start the project
-* `renv.lock` this file is used by `renv` to record the dependencies used by the project
 
 
 ### Acknowledgements 🙏
