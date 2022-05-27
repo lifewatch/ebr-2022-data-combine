@@ -1,6 +1,6 @@
 ---
 title: "Bringing together marine biodiversity, environmental and maritime boundaries data in R"
-author: "Salvador Fernandez, Laura Marquez"
+author: "Salvador Fernandez, Laura Marquez and Lotte Pohl (VLIZ)"
 date: "May 30 2022"
 output: 
   revealjs::revealjs_presentation:
@@ -54,7 +54,10 @@ May 30th 2022
 
 Many more workshops! Discover [*here*](https://www.biodiversity.be/5147/)
 
+- June 2, 10:00 - 12:00 (register [*here*](https://tinyurl.com/3d2z6nkm)) <br>*FAIR biodiversity data: what, why and how?*
+
  - June 9, 9:30 - 16:30 (register [*here*](https://tinyurl.com/yckurpft)) <br>*Linking occurrence data with environmental variables from the ecotopes*
+
  - June 29, 09:00 - 17:00 (register [*here*](https://forms.gle/eHsQFze8sLJzPnxq9))<br>*Explore GBIF from the Cloud*
  
  - September 27, 09:30 - 16:30 (register [*here*](https://docs.google.com/forms/d/1SFvlAdIe0YviE7tW0uSffFo7TvnI5S27I-844rWeT00/edit))<br>*Research Data Management workshop: Hands-on introductions to research data management and  publication*
@@ -102,6 +105,15 @@ so the question is what is the workflow that allows us to obtain data and work w
 ## The Story
 <img src="images2/pic6.jpg" style="width:85%">
 
+## The Species
+<!-- To answer those type of questions is the aim of this workshop. We are going to learn how to query, access and obtain the data hold in different European Marine databases and for that we are going to work with some of the representative species: 
+Anguila, carp, catfish, the common roach, codfish and flounder.
+-->
+<br/>
+<br/>
+<br/>
+<br/>
+<img src="images/species.png" style="width:100%">
 
 ## Who we are
 
@@ -122,44 +134,11 @@ so the question is what is the workflow that allows us to obtain data and work w
   <br><div style="font-size:30px">Lotte Pohl</div> <br/> <div style="font-size:25px">VLIZ/IMBRSea <br/>Intern</div><br/><div style="font-size:20px"> lotte.pohl@imbrsea.eu</div>
 </button>
 
-## The Species
-<!-- To answer those type of questions is the aim of this workshop. We are going to learn how to query, access and obtain the data hold in different European Marine databases and for that we are going to work with some of the representative species: 
-Anguila, carp, catfish, the common roach, codfish and flounder.
--->
-<br/>
-<br/>
-<br/>
-<br/>
-<img src="images/species.png" style="width:100%">
+</br>
 
-<!-- <button style="width:27%"> -->
-<!--   <img src="images2/Anguilla.jpg"> -->
-<!-- </button> -->
-
-<!-- <button style="width:30%"> -->
-<!--   <img src="images2/cod.jpg"> -->
-<!-- </button> -->
-
-<!-- <button style="width:30%"> -->
-<!--   <img src="images2/flounder.jpg"> -->
-<!-- </button> -->
-
-<!-- <img src="images2/Anguilla.jpg" style="width:75%"> -->
-
-<!-- ## The Species -->
-<!-- <img src="images2/carp.jpg" style="width:75%"> -->
-
-<!-- ## The Species -->
-<!-- <img src="images2/catfish.jpg" style="width:75%"> -->
-
-<!-- ## The Species -->
-<!-- <img src="images2/commonroach.jpg" style="width:75%"> -->
-
-<!-- ## The Species -->
-<!-- <img src="images2/cod.jpg" style="width:75%"> -->
-
-<!-- ## The Species -->
-<!-- <img src="images2/flounder.jpg" style="width:75%"> -->
+<button style="width:26%">
+  <img src="images/vliz.png">
+</button>
 
 ## What we will learn
 
@@ -216,21 +195,20 @@ Anguila, carp, catfish, the common roach, codfish and flounder.
 
 ## Timeline (13:30 - 16:30)
 
-  1. **Introduction** *(13:30 - 14:00)*
+  1. **Introduction** *(13:30 - 13:40)*
   
-  2. **Exercise 1** *(14:00 - 14:45)*
+  2. **Exercise 1** *(13:40 - 14:30)*
   
-  3. **Break** *(14:45 - 15:00)*
+  3. **Break** *(14:30 - 14:45)*
   
-  4. **Exercise 2** *(15:00 - 15:30)*
+  4. **Exercise 2** *(14:45 - 15:20)*
   
-  5. **Exercise 3** *(15:30 - 15:45)*
+  5. **Exercise 3** *(15:20 - 15:50)*
   
-  6. **Break** *(15:45 - 16:00)*
+  6. **Break** *(15:50 - 16:00)*
   
-  7. **Exercise 4** *(16:30 - 16:15)*
+  7. **Exercise 4** *(16:00 - 16:30)*
   
-  8. **Close-off** *(16:15 - 16:30)*
 
 
 ## House Rules
@@ -238,7 +216,8 @@ Anguila, carp, catfish, the common roach, codfish and flounder.
  - This is a collaborative workshop! 🙌 Let's share our solutions in [this google document](https://docs.google.com/document/d/1n2_0lDrOyFIqapo85NA_0cH2qJPDE1P2HOlTw5ANYK8/edit?usp=sharing)
  - These slides are available online at  [lifewatch.github.io/ebr-2022-data-combine](https://lifewatch.github.io/ebr-2022-data-combine)
  - You can ask questions online via Q&A, or shout if you are in Brussels 📣
- - Make sure you are using `renv`.
+ - The workshop can be run with [binder](https://mybinder.org/) in your browser: [Launch binder](https://mybinder.org/v2/gh/lifewatch/ebr-2022-data-combine/HEAD?urlpath=rstudio)
+ - Make sure you are using [renv](https://rstudio.github.io/renv/)
  - Use the RStudio projects!
 
 <!-- ```{r meme_getwd, echo = FALSE} -->
@@ -248,7 +227,7 @@ Anguila, carp, catfish, the common roach, codfish and flounder.
 
 <!-- ``` -->
 
-<img src="images/hotlinedrake.png" style="width:45%">
+<img src="images/hotlinedrake.png" style="width:43%">
 
 <!----------------------------------------------->
 <!--                                           -->
@@ -313,9 +292,9 @@ class(zoo_sf)
 ```
 
 - `sf` [cheatsheet here](https://raw.githubusercontent.com/rstudio/cheatsheets/main/sf.pdf)
-- [Coordinate Reference Systems (CRS)](https://docs.qgis.org/2.18/en/docs/gentle_gis_introduction/coordinate_reference_systems.html): _provide a standardized way of describing locations_
+- Coordinate Reference Systems (CRS): _precisely measure locations on the surface of the Earth as coordinates_
 <br> 
-<small>https://www.nceas.ucsb.edu</small>
+<small>https://en.wikipedia.org/wiki/Spatial_reference_system</small>
 
 ## Dataset example: Belgian LifeWatch Observatory data
 ```{r lwdata3}
@@ -405,7 +384,7 @@ mapview(territorial_sea)
 ## MRGID: Unique identifier of a record of the [marineregions.org](https://marineregions.org/mrgid.php) Gazetteer
 
 ```
-https://marineregions.org/gazetteer.php?p=details&id=3293
+http://marineregions.org/mrgid/3293
 ```
 <img src="images/mrgid.png" width="40%" height="auto">
 
@@ -413,20 +392,13 @@ https://marineregions.org/gazetteer.php?p=details&id=3293
 
 We will perform a spatial intersection
 
-<img src="images/intersection_1.png" style="width:85%">
+<img src="images/intersection_1.png">
 
 ## Spatial filtering
 
-We will perform an spatial intersection
+We will perform a spatial intersection
 
-<img src="images/intersection_2.png" style="width:85%">
-
-## Spatial filtering
-
-We will perform an spatial intersection
-
-<img src="images/intersection_3.png" style="width:85%">
-
+<img src="images/intersection_2.png">
 
 ## Spatial filtering
 
@@ -438,16 +410,6 @@ nrow(zoo_sf)
 zoo_sf_belgium <- st_intersection(zoo_sf, territorial_sea)
 
 nrow(zoo_sf_belgium)
-```
-
-## Spatial filtering
-```{r spfilter1}
-mapview(list(zoo_sf, territorial_sea))
-```
-
-## Spatial filtering
-```{r spfilter2}
-mapview(list(zoo_sf_belgium, territorial_sea))
 ```
 
 ## Exercise 1
@@ -652,7 +614,7 @@ list_layers("Bio-ORACLE", version = 2.2)
 list_layers_future("Bio-ORACLE", version = 2.2)
 
 # Pass layer code for max sea surface temperature
-load_layers("BO22_RCP26_2050_chlomean_ss")
+load_layers("BO22_RCP26_2050_chlomean_ss", datadir = "./data/")
 ```
 
 See the `sdmpredictors` R package [documentation here](http://lifewatch.github.io/sdmpredictors/)
@@ -681,7 +643,7 @@ kbl(list_layers_future("Bio-ORACLE", version = 2.2)) %>%
 
 ## Bio-Oracle
 ```{r sdm4}
-bio_oracle <- load_layers("BO22_RCP26_2050_chlomean_ss")
+bio_oracle <- load_layers("BO22_RCP26_2050_chlomean_ss", datadir = "./data/")
 bio_oracle
 ```
 
@@ -726,22 +688,25 @@ Please fill out [this questionnaire!](https://docs.google.com/forms/d/1YUC01T3bo
 
 The points will get the values from the polygon
 
-<img src="images/sp_1.png" style="width:85%">
+<img src="images/sp_1.png">
 
-More info: http://wiki.gis.com/wiki/index.php/Spatial_Join
-
-## Spatial Join
-
-The points will get the values from the polygon
-
-<img src="images/sp_2.png" style="width:85%">
+<small>More info: http://wiki.gis.com/wiki/index.php/Spatial_Join</small>
 
 ## Spatial Join
 
 The points will get the values from the polygon
 
-<img src="images/sp_3.png" style="width:85%">
+<img src="images/sp_2.png">
 
+<small>More info: http://wiki.gis.com/wiki/index.php/Spatial_Join</small>
+
+## Spatial Join
+
+The points will get the values from the polygon
+
+<img src="images/sp_3.png">
+
+<small>More info: http://wiki.gis.com/wiki/index.php/Spatial_Join</small>
 
 ## Spatial Join
 
