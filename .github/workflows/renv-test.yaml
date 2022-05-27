@@ -29,6 +29,8 @@ jobs:
         run: sudo apt install protobuf-compiler
       - name: Install libprotobuf
         run: sudo apt install libprotobuf-dev
+      - name: Install libjq
+        run: sudo apt install libjq-dev
       - name: Install renv latest
         run: Rscript -e "install.packages('renv', type = 'source')"
       - name: Fetch dependencies with renv
