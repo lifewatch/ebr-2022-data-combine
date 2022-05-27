@@ -25,6 +25,8 @@ jobs:
         run: sudo apt install libgdal-dev
       - name: Install sodium
         run: sudo apt install libsodium-dev
+      - name: Install protobuf-compiler
+        run: sudo apt install protobuf-compiler
       - name: Install libprotobuf
         run: sudo apt install libprotobuf-dev
       - name: Install renv latest
