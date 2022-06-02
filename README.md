@@ -22,11 +22,16 @@ renv::restore()
 
 ## Get started 🚀
 
-The exercises are in the 📁 folder: `./src/exercises/`. These are R scripts where the exercises are explained with comments. We chose this format to promote the reuse of this code for your own purposes. You are welcome to apply the tools explained in this workshop to your data.
+The exercises are in the 📁 folder: `./src/exercises/`. These are R scripts where the exercises are explained with comments. We chose this format to promote the reuse of this code for your own purposes. You are welcome to apply the tools explained in this workshop to your data.
 
 Open the slides of the workshop in your web browser and keep them at hand. The slides are in this link: https://lifewatch.github.io/ebr-2022-data-combine
 
 🌟 **Now we can start the workshop!** 🌟
+
+## Watch the session on YouTube
+
+[![Alt text](https://img.youtube.com/vi/J16nyj6ruHM/0.jpg)](https://www.youtube.com/watch?v=J16nyj6ruHM)
+
 
 ## Extra Information
 
